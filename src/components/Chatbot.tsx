@@ -14,22 +14,22 @@ interface Message {
 
 const INITIAL_MESSAGE: Message = {
   id: '1',
-  text: 'Ciao! Sono Eugenio, il tuo consulente digitale di Creditplan. Come posso aiutarti con la tua Cessione del Quinto?',
+  text: 'Ciao! Sono il tuo assistente digitale di Retivita. Come posso aiutarti a scoprire le opportunità della nostra rete di consulenti assicurativi?',
   sender: 'bot',
   timestamp: new Date(),
 };
 
 const QUICK_REPLIES = [
-  "Cos'è la Cessione del Quinto?",
-  'Quali sono i costi e le commissioni associate?',
-  'Quanto tempo serve per ottenere il prestito?',
-  'Quali requisiti devo avere per richiedere la Cessione del Quinto?',
-  'Esiste un limite massimo di età per la Cessione del Quinto?',
-  'Cosa succede se non raggiungo i requisiti per rinnovare una Cessione del Quinto già in corso?',
-  'Perché dovrei scegliere Creditplan?',
-  'Posso richiedere il prestito se sono stato segnalato come cattivo pagatore?',
-  'È possibile estinguere anticipatamente la Cessione del Quinto?',
-  'Quanto costa la consulenza iniziale con Creditplan?'
+  "Come funziona la rete Retivita?",
+  'Quali prodotti posso collocare?',
+  'Come funziona il piano provvigionale?',
+  'Devo essere già iscritto al RUI?',
+  'C\'è un costo per aderire alla rete?',
+  'Che tipo di formazione offrite?',
+  'Perché scegliere Retivita?',
+  'Posso aderire se non ho esperienza?',
+  'Come avvengono i pagamenti delle provvigioni?',
+  'Quanto tempo ci vuole per iniziare?'
 ] as const;
 
 const QUICK_REPLIES_PAGE_SIZE = 5;
@@ -38,26 +38,26 @@ const QUICK_REPLIES_TOTAL_PAGES = Math.ceil(
 );
 
 const PREDEFINED_RESPONSES: Record<typeof QUICK_REPLIES[number], string> = {
-  "Cos'è la Cessione del Quinto?":
-    "La Cessione del Quinto è un prestito personale con una rata mensile che non supera il quinto (20%) del tuo stipendio netto o della tua pensione, trattenuta direttamente in busta paga o sulla pensione.",
-  'Quali sono i costi e le commissioni associate?':
-    "Le commissioni di mediazione sono regolamentate secondo la normativa vigente e vengono sempre comunicate in modo trasparente nel preventivo TAEG (Tasso Annuo Effettivo Globale). Il TAEG comprende tutti i costi, inclusi: spese di istruttoria, commissioni di mediazione, costi assicurativi obbligatori per legge e commissioni bancarie. Riceverai un preventivo personalizzato e dettagliato prima di qualsiasi impegno, in conformità con le normative di trasparenza bancaria.",
-  'Quanto tempo serve per ottenere il prestito?':
-    "Con Creditplan puoi ottenere la liquidità necessaria in pochi giorni grazie ai nostri partner bancari specializzati e al team qualificato.",
-  'Quali requisiti devo avere per richiedere la Cessione del Quinto?':
-    "Puoi richiedere la Cessione del Quinto se sei un lavoratore dipendente (pubblico o privato) con contratto a tempo indeterminato o un pensionato. Non è richiesto alcun garante.",
-  'Esiste un limite massimo di età per la Cessione del Quinto?':
-    "Sì, i pensionati possono ottenere il prestito fino a 89 anni alla scadenza del finanziamento.",
-  'Cosa succede se non raggiungo i requisiti per rinnovare una Cessione del Quinto già in corso?':
-    "In caso di mancato raggiungimento dei termini per il rinnovo, possiamo valutare insieme la Delegazione di Pagamento, una seconda trattenuta sullo stipendio che permette di ottenere ulteriore liquidità.",
-  'Perché dovrei scegliere Creditplan?':
-    "Offriamo tempi rapidi di erogazione. Collaboriamo con partner bancari convenzionati INPS, garantendo sicurezza e affidabilità. Abbiamo un team dedicato di professionisti a tua disposizione. Nessuna spesa aggiuntiva: la consulenza è gratuita. Tassi altamente competitivi.",
-  'Posso richiedere il prestito se sono stato segnalato come cattivo pagatore?':
-    "Sì, la Cessione del Quinto è accessibile anche in caso di segnalazioni o protesti, in quanto non si basa sulla tua storia creditizia, ma sul tuo stipendio o pensione.",
-  'È possibile estinguere anticipatamente la Cessione del Quinto?':
-    "Sì, puoi estinguere anticipatamente il prestito in qualsiasi momento beneficiando della riduzione degli interessi residui.",
-  'Quanto costa la consulenza iniziale con Creditplan?':
-    "Nessun costo accessorio."
+  "Come funziona la rete Retivita?":
+    "Retivita è una rete di distribuzione assicurativa che ti permette di collocare prodotti delle migliori compagnie italiane. Accedi a un catalogo ampio, a provvigioni competitive, formazione continua e supporto commerciale dedicato. Puoi lavorare in piena autonomia.",
+  'Quali prodotti posso collocare?':
+    "Avrai accesso a vita, previdenza integrativa, TCM, protezione reddito, polizze danni e soluzioni per aziende. Collaboriamo con le principali compagnie del mercato italiano per garantirti sempre i prodotti più competitivi.",
+  'Come funziona il piano provvigionale?':
+    "Il piano provvigionale è tra i più competitivi del mercato, con percentuali crescenti al crescere del volume di premi collocati. Include bonus al raggiungimento degli obiettivi e provvigioni ricorrenti sul portafoglio clienti acquisito.",
+  'Devo essere già iscritto al RUI?':
+    "Sì, è necessario essere iscritti al Registro Unico degli Intermediari (RUI) tenuto dall'IVASS. Se non sei ancora iscritto, il nostro team ti supporterà nell'intero processo di iscrizione, rendendolo semplice e veloce.",
+  'C\'è un costo per aderire alla rete?':
+    "No, l'adesione a Retivita è completamente gratuita. Nessun costo di iscrizione e nessuna fee mensile. Inizi a guadagnare dalla prima polizza collocata, senza costi fissi.",
+  'Che tipo di formazione offrite?':
+    "Mettiamo a disposizione una piattaforma di e-learning sempre aggiornata, webinar settimanali con esperti del settore, materiale commerciale professionale e affiancamento da professionisti esperti. Investiamo nella tua crescita professionale.",
+  'Perché scegliere Retivita?':
+    "Retivita offre provvigioni competitive, un ampio catalogo prodotti, formazione certificata, strumenti digitali avanzati (CRM, firma digitale) e un supporto commerciale dedicato. Con oltre 500 consulenti attivi, siamo la rete di chi vuole crescere nel settore assicurativo.",
+  'Posso aderire se non ho esperienza?':
+    "Assolutamente sì! Accettiamo anche professionisti alle prime armi. Offriamo un percorso di formazione completo e un affiancamento personalizzato per aiutarti a costruire il tuo portafoglio fin da subito.",
+  'Come avvengono i pagamenti delle provvigioni?':
+    "Le provvigioni vengono liquidate rapidamente e hai accesso in tempo reale al tuo estratto conto provvigionale tramite il nostro CRM. I pagamenti sono puntuali e trasparenti.",
+  'Quanto tempo ci vuole per iniziare?':
+    "Il processo è veloce! Dopo la candidatura, un nostro responsabile ti contatta entro 24 ore. L'onboarding è rapido e la maggior parte dei consulenti inizia a collocare polizze già nella prima settimana."
 };
 
 export function Chatbot() {
@@ -108,32 +108,32 @@ export function Chatbot() {
 
     const lowerText = userText.toLowerCase();
 
-    if (lowerText.includes('quanto') && (lowerText.includes('ottenere') || lowerText.includes('posso'))) {
-      return 'Con la Cessione del Quinto puoi ottenere fino a 75.000€! L\'importo esatto dipende dal tuo stipendio e dalla durata del finanziamento. Vuoi che un nostro consulente ti calcoli l\'importo preciso?';
+    if (lowerText.includes('guadagn') || lowerText.includes('provvigion') || lowerText.includes('quanto posso')) {
+      return 'Il piano provvigionale di Retivita è tra i più competitivi del mercato assicurativo. Le percentuali crescono al crescere del volume prodotto e incluono bonus e provvigioni ricorrenti sul portafoglio. Candidati per ricevere i dettagli!';
     }
 
-    if (lowerText.includes('requisiti') || lowerText.includes('condizioni')) {
-      return 'I requisiti principali sono: essere dipendente pubblico o privato con contratto a tempo indeterminato, avere almeno 18 anni, e un reddito mensile sufficiente. Vuoi verificare se hai tutti i requisiti?';
+    if (lowerText.includes('requisiti') || lowerText.includes('condizioni') || lowerText.includes('rui') || lowerText.includes('ivass')) {
+      return 'Il requisito principale è l\'iscrizione al RUI (Registro Unico degli Intermediari) tenuto dall\'IVASS. Se non sei ancora iscritto, ti aiutiamo noi nell\'iter di iscrizione. Vuoi candidarti?';
     }
 
-    if (lowerText.includes('tempo') || lowerText.includes('quanto ci vuole') || lowerText.includes('veloce')) {
-      return 'Il processo è velocissimo! Approvazione preliminare in 24 ore lavorative e denaro sul tuo conto in 48 ore operative. Vuoi iniziare subito la richiesta?';
+    if (lowerText.includes('tempo') || lowerText.includes('quanto ci vuole') || lowerText.includes('veloce') || lowerText.includes('iniziare')) {
+      return 'Il processo è veloce! Dopo la candidatura ti contattiamo entro 24 ore. L\'onboarding è rapido e la maggior parte dei consulenti inizia a collocare polizze già nella prima settimana.';
     }
 
-    if (lowerText.includes('consulente') || lowerText.includes('parlare') || lowerText.includes('chiamare')) {
-      return 'Perfetto! Un nostro consulente esperto sarà felice di aiutarti. Compila il form sulla pagina con i tuoi dati e ti richiameremo entro 2 ore. Oppure chiamaci direttamente al numero che trovi sul sito!';
+    if (lowerText.includes('responsabile') || lowerText.includes('parlare') || lowerText.includes('chiamare') || lowerText.includes('contatto')) {
+      return 'Perfetto! Un nostro responsabile di rete sarà felice di aiutarti. Compila il form sulla pagina con i tuoi dati e ti contatteremo entro 24 ore, senza impegno!';
     }
 
-    if (lowerText.includes('costo') || lowerText.includes('commissioni') || lowerText.includes('quanto costa')) {
-      return 'La consulenza iniziale è completamente gratuita e l\'istruttoria non ha costi! Ti garantiamo massima trasparenza su tutte le condizioni fin dall\'inizio, senza sorprese.';
+    if (lowerText.includes('costo') || lowerText.includes('quanto costa') || lowerText.includes('gratuito')) {
+      return 'L\'adesione a Retivita è completamente gratuita! Nessun costo di iscrizione, nessuna fee mensile. Inizi a guadagnare dalla prima polizza collocata, senza costi fissi.';
     }
 
-    if (lowerText.includes('documenti') || lowerText.includes('cosa serve')) {
-      return 'Per la richiesta preliminare non servono documenti! Basta compilare il form. I documenti necessari ti verranno richiesti solo dopo, durante la fase di istruttoria, e ti guideremo passo passo.';
+    if (lowerText.includes('prodotti') || lowerText.includes('polizze') || lowerText.includes('assicurazioni')) {
+      return 'Con Retivita puoi collocare vita, previdenza integrativa, TCM, protezione reddito, polizze danni e soluzioni per aziende. Collaboriamo con le principali compagnie italiane per offrirti sempre i prodotti più competitivi.';
     }
 
     if (lowerText.includes('ciao') || lowerText.includes('salve') || lowerText.includes('buongiorno') || lowerText.includes('buonasera')) {
-      return 'Ciao! 👋 Sono qui per aiutarti con qualsiasi domanda sulla Cessione del Quinto. Cosa vorresti sapere?';
+      return 'Ciao! 👋 Sono qui per aiutarti a scoprire le opportunità della rete Retivita. Cosa vorresti sapere?';
     }
 
     if (lowerText.includes('grazie')) {
@@ -141,7 +141,7 @@ export function Chatbot() {
     }
 
     // Default response
-    return 'Grazie per la tua domanda! Per una risposta precisa e personalizzata, ti consiglio di parlare con un nostro consulente esperto. Compila il form sulla pagina e ti richiameremo subito, oppure continua a farmi domande!';
+    return 'Grazie per la tua domanda! Per una risposta precisa e personalizzata, ti consiglio di parlare con un nostro responsabile di rete. Compila il form sulla pagina e ti contatteremo subito, oppure continua a farmi domande!';
   };
 
   return (
@@ -150,7 +150,7 @@ export function Chatbot() {
       <div className="bg-white px-6 py-4 border-b border-slate-200">
         <div className="flex items-center justify-center">
           <VisuallyHidden.Root>
-            <DialogTitle>Chat con un consulente Creditplan</DialogTitle>
+            <DialogTitle>Chat con un responsabile Retivita</DialogTitle>
           </VisuallyHidden.Root>
           <Image
             src="https://creditplan.it/wp-content/uploads/2025/10/Eugenio.svg"

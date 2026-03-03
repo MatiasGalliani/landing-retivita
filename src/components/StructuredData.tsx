@@ -2,19 +2,19 @@
 
 import { useEffect } from 'react';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://creditplan.it';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://retivita.it';
 
 export function StructuredData() {
   useEffect(() => {
     // Organization Schema
     const organizationSchema = {
       "@context": "https://schema.org",
-      "@type": "FinancialService",
-      "name": "AICondomini - Creditplan Italia Network di Mediazione Creditizia",
-      "alternateName": "AICondomini",
+      "@type": "Organization",
+      "name": "Retivita — Rete Italiana di Consulenti Assicurativi",
+      "alternateName": "Retivita",
       "url": siteUrl,
       "logo": `${siteUrl}/logo.png`,
-      "description": "Servizi di mediazione creditizia specializzati per condomini. Finanziamenti per ristrutturazioni, efficienza energetica e manutenzione straordinaria.",
+      "description": "Retivita è la rete italiana di consulenti assicurativi. Offriamo prodotti esclusivi, alte provvigioni, formazione continua e supporto commerciale per far crescere il business nel settore assicurativo.",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "IT",
@@ -22,21 +22,21 @@ export function StructuredData() {
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "contactType": "Customer Service",
+        "contactType": "Recruitment",
         "availableLanguage": ["Italian"]
       },
       "sameAs": [
-        "https://creditplan.it"
+        "https://retivita.it"
       ],
       "areaServed": {
         "@type": "Country",
         "name": "Italy"
       },
-      "serviceType": "Mediazione Creditizia per Condomini",
+      "serviceType": "Distribuzione Assicurativa",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
-        "reviewCount": "2000",
+        "reviewCount": "500",
         "bestRating": "5",
         "worstRating": "1"
       }
@@ -45,12 +45,12 @@ export function StructuredData() {
     // Product/Service Schema
     const productSchema = {
       "@context": "https://schema.org",
-      "@type": "FinancialProduct",
-      "name": "Finanziamento Condominio",
-      "description": "Finanziamenti per lavori condominiali: ristrutturazioni, efficienza energetica, cappotto termico, fotovoltaico. Erogazione diretta, zero garanzie personali, supporto completo.",
+      "@type": "Service",
+      "name": "Rete Consulenti Assicurativi Retivita",
+      "description": "Aderisci alla rete Retivita: accedi a prodotti assicurativi esclusivi, piano provvigionale competitivo, formazione certificata e supporto commerciale dedicato.",
       "provider": {
-        "@type": "FinancialService",
-        "name": "AICondomini"
+        "@type": "Organization",
+        "name": "Retivita"
       },
       "offers": {
         "@type": "Offer",
@@ -69,15 +69,15 @@ export function StructuredData() {
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
-        "reviewCount": "2000"
+        "reviewCount": "500"
       },
       "featureList": [
-        "Erogazione diretta al condominio",
-        "Zero garanzie personali",
-        "Supporto in assemblea",
-        "Specialisti eco-bonus",
-        "Gestione completa burocrazia",
-        "Piani fino a 10 anni"
+        "Alte provvigioni sul collocato",
+        "Ampio catalogo prodotti assicurativi",
+        "Formazione continua certificata",
+        "Supporto commerciale dedicato",
+        "CRM e strumenti digitali",
+        "Zero costi di ingresso"
       ]
     };
 
@@ -88,50 +88,42 @@ export function StructuredData() {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Quali tipi di lavori possono essere finanziati?",
+          "name": "Devo avere già un portafoglio clienti per entrare nella rete?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ristrutturazione facciate, tetti, installazione ascensori, cappotto termico e impianti fotovoltaici."
+            "text": "No, accettiamo sia consulenti con esperienza pluriennale che professionisti alle prime armi. Offriamo un percorso di formazione e affiancamento personalizzato per aiutarti a costruire il tuo portafoglio fin da subito."
           }
         },
         {
           "@type": "Question",
-          "name": "È necessaria la firma di tutti i condòmini?",
+          "name": "È necessario essere iscritti al RUI per collaborare con Retivita?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No, il finanziamento viene deliberato dall'assemblea e sottoscritto dall'amministratore pro-tempore."
+            "text": "Sì, è necessario essere iscritti al Registro Unico degli Intermediari (RUI) tenuto dall'IVASS. Se non sei ancora iscritto, il nostro team ti supporterà nell'intero processo di iscrizione."
           }
         },
         {
           "@type": "Question",
-          "name": "Qual è la durata massima del finanziamento?",
+          "name": "Quanto posso guadagnare come consulente nella rete Retivita?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Offriamo piani flessibili che possono arrivare fino a 120 mesi (10 anni)."
+            "text": "Il piano provvigionale è tra i più competitivi del mercato, con percentuali crescenti al crescere del volume di premi collocati, bonus produzione e provvigioni ricorrenti sul portafoglio."
           }
         },
         {
           "@type": "Question",
-          "name": "Esistono costi anticipati?",
+          "name": "Quali prodotti assicurativi posso collocare?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No, la consulenza preliminare è gratuita e non vincolante."
+            "text": "Avrai accesso a vita, previdenza integrativa, protezione reddito, TCM, polizze danni e soluzioni per aziende. Collaboriamo con le principali compagnie del mercato italiano."
           }
         },
         {
           "@type": "Question",
-          "name": "Come viene erogato il finanziamento?",
+          "name": "Ricevo supporto e formazione dopo aver aderito alla rete?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Il finanziamento viene erogato direttamente al condominio, permettendo di iniziare i lavori immediatamente senza attendere la raccolta delle quote dai singoli condòmini."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quanto tempo serve per ottenere una risposta?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Valutiamo la fattibilità del progetto e la solvibilità del condominio in 48 ore."
+            "text": "Sì, mettiamo a disposizione una piattaforma di e-learning, webinar settimanali, materiale commerciale aggiornato e un team di supporto dedicato."
           }
         }
       ]
@@ -151,8 +143,8 @@ export function StructuredData() {
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Finanziamenti Condomini",
-          "item": `${siteUrl}/finanziamenti-condomini`
+          "name": "Diventa Consulente Assicurativo",
+          "item": `${siteUrl}/diventa-consulente`
         }
       ]
     };
@@ -161,18 +153,18 @@ export function StructuredData() {
     const webPageSchema = {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Finanziamenti per Condomini | Mediazione Creditizia | AICondomini",
-      "description": "Soluzioni finanziarie per condomini: ristrutturazioni, efficienza energetica e manutenzione straordinaria. Mediazione creditizia specializzata con delibere veloci e supporto completo.",
+      "name": "Retivita | Entra nella Rete dei Consulenti Assicurativi",
+      "description": "Unisciti a Retivita, la rete italiana di consulenti assicurativi. Prodotti esclusivi, alte provvigioni, formazione continua e supporto commerciale per far crescere il tuo business.",
       "url": siteUrl,
       "inLanguage": "it-IT",
       "isPartOf": {
         "@type": "WebSite",
-        "name": "AICondomini",
+        "name": "Retivita",
         "url": siteUrl
       },
       "about": {
-        "@type": "FinancialProduct",
-        "name": "Finanziamento Condominio"
+        "@type": "Service",
+        "name": "Rete Consulenti Assicurativi"
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
@@ -186,10 +178,10 @@ export function StructuredData() {
     const serviceSchema = {
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Mediazione Creditizia per Condomini",
+      "serviceType": "Distribuzione Assicurativa",
       "provider": {
-        "@type": "FinancialService",
-        "name": "AICondomini"
+        "@type": "Organization",
+        "name": "Retivita"
       },
       "areaServed": {
         "@type": "Country",
@@ -197,30 +189,30 @@ export function StructuredData() {
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Servizi di Finanziamento",
+        "name": "Prodotti Assicurativi",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Ristrutturazione Facciate",
-              "description": "Finanziamento per rifacimento facciate e cappotto termico"
+              "name": "Polizze Vita e Previdenza",
+              "description": "Prodotti vita, previdenza integrativa e TCM per privati e aziende"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Efficienza Energetica",
-              "description": "Finanziamento per fotovoltaico e riqualificazione energetica"
+              "name": "Protezione Reddito",
+              "description": "Polizze di protezione del reddito e invalidità permanente"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Installazione Ascensori",
-              "description": "Finanziamento per installazione ascensori e abbattimento barriere"
+              "name": "Polizze Danni",
+              "description": "Soluzioni danni per privati e aziende: casa, auto, responsabilità civile"
             }
           }
         ]
@@ -231,32 +223,32 @@ export function StructuredData() {
     const howToSchema = {
       "@context": "https://schema.org",
       "@type": "HowTo",
-      "name": "Come otteniamo il finanziamento per il condominio",
-      "description": "Guida passo-passo per ottenere un finanziamento per lavori condominiali con AICondomini",
+      "name": "Come entrare nella rete Retivita",
+      "description": "Guida passo-passo per diventare consulente assicurativo nella rete Retivita",
       "step": [
         {
           "@type": "HowToStep",
           "position": 1,
-          "name": "Analisi Preliminare",
-          "text": "Valutiamo la fattibilità del progetto e la solvibilità del condominio in 48 ore.",
+          "name": "Candidati Gratuitamente",
+          "text": "Compila il modulo e un nostro responsabile di rete ti contatterà entro 24 ore.",
           "image": `${siteUrl}/step1.jpg`
         },
         {
           "@type": "HowToStep",
           "position": 2,
-          "name": "Delibera e Firma",
-          "text": "Supportiamo l'amministratore nella presentazione del piano in assemblea.",
+          "name": "Onboarding e Formazione",
+          "text": "Accedi al catalogo prodotti, alla piattaforma formativa e agli strumenti digitali.",
           "image": `${siteUrl}/step2.jpg`
         },
         {
           "@type": "HowToStep",
           "position": 3,
-          "name": "Liquidità Immediata",
-          "text": "Una volta approvato, i fondi vengono erogati per dare il via ai lavori.",
+          "name": "Inizia a Produrre",
+          "text": "Coloca le prime polizze e ricevi le tue provvigioni in modo rapido e trasparente.",
           "image": `${siteUrl}/step3.jpg`
         }
       ],
-      "totalTime": "PT48H"
+      "totalTime": "PT24H"
     };
 
     // Add all schemas to the page

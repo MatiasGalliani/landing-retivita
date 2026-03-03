@@ -4,44 +4,44 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "Cos'è la Cessione del Quinto?",
-    answer: "La Cessione del Quinto è un prestito personale che ti permette di ottenere fino a 75.000€ senza dover cambiare banca. Il rimborso avviene direttamente dalla busta paga, con trattenute automatiche pari a massimo un quinto dello stipendio netto."
+    question: "Devo avere già un portafoglio clienti per entrare nella rete?",
+    answer: "No, accettiamo sia consulenti con esperienza pluriennale che professionisti alle prime armi. Offriamo un percorso di formazione e affiancamento personalizzato per aiutarti a costruire il tuo portafoglio fin da subito."
   },
   {
-    question: "Quali sono i costi e le commissioni associate?",
-    answer: "Con Creditplan, l'istruttoria è completamente gratuita e non ci sono costi nascosti. Ti garantiamo massima trasparenza su tutti i costi del finanziamento fin dall'inizio, senza sorprese."
+    question: "È necessario essere iscritti al RUI per collaborare con Retivita?",
+    answer: "Sì, è necessario essere iscritti al Registro Unico degli Intermediari (RUI) tenuto dall'IVASS. Se non sei ancora iscritto, il nostro team ti supporterà nell'intero processo di iscrizione."
   },
   {
-    question: "Quanto tempo serve per ottenere il prestito?",
-    answer: "Dopo l'approvazione preliminare in sole 24 ore lavorative, il denaro viene erogato sul tuo conto corrente in massimo 48 ore operative. Il processo è completamente digitale e veloce."
+    question: "Quanto posso guadagnare come consulente nella rete Retivita?",
+    answer: "Il piano provvigionale è tra i più competitivi del mercato, con percentuali crescenti al crescere del volume di premi collocati e bonus produzione."
   },
   {
-    question: "Quali requisiti devo avere per richiedere la Cessione del Quinto?",
-    answer: "I requisiti principali sono: essere dipendente pubblico o privato con contratto a tempo indeterminato, avere un'età minima di 18 anni e massima che permetta di estinguere il prestito prima del pensionamento, e avere un reddito mensile sufficiente."
+    question: "Quali prodotti assicurativi posso collocare?",
+    answer: "Avrai accesso a vita, previdenza integrativa, protezione reddito, TCM, polizze danni e soluzioni per aziende. Collaboriamo con le principali compagnie italiane."
   },
   {
-    question: "Esiste un limite massimo di età per la Cessione del Quinto?",
-    answer: "Non esiste un limite di età fisso, ma è necessario che tu possa estinguere il prestito prima di raggiungere l'età pensionabile. Il requisito principale è che il contratto di lavoro copra l'intera durata del prestito."
+    question: "Esistono costi di iscrizione alla rete?",
+    answer: "No, l'adesione a Retivita è completamente gratuita. Nessun costo di iscrizione e nessuna fee mensile. Guadagni dalla prima polizza collocata."
   },
   {
-    question: "Cosa succede se non raggiungo i requisiti per rinnovare una Cessione del Quinto già in corso?",
-    answer: "Se non soddisfi più i requisiti per il rinnovo, potrai comunque continuare a estinguere il prestito in corso secondo le condizioni già stabilite. Ti consigliamo di contattarci per valutare insieme le migliori opzioni disponibili."
+    question: "Cosa succede se non ho ancora esperienza nel settore assicurativo?",
+    answer: "Nessun problema. Offriamo un percorso di onboarding completo con formazione certificata, affiancamento e tutto il materiale necessario per iniziare a lavorare da subito."
   },
   {
-    question: "Perché dovrei scegliere Creditplan?",
-    answer: "Creditplan offre un servizio rapido, trasparente e completamente digitale. Con oltre 2.000 famiglie soddisfatte, garantiamo approvazione in 24 ore, erogazione in 48 ore, istruttoria gratuita e consulenza professionale in ogni fase del processo."
+    question: "Perché dovrei scegliere Retivita rispetto ad altre reti?",
+    answer: "Retivita offre un piano provvigionale competitivo, un ampio catalogo prodotti, formazione continua e strumenti digitali avanzati. Con oltre 500 consulenti attivi, siamo la scelta di chi vuole crescere nel settore assicurativo."
   },
   {
-    question: "Posso richiedere il prestito se sono stato segnalato come cattivo pagatore?",
-    answer: "Ogni caso viene valutato singolarmente. Anche se sei stato segnalato in CRIF o altri registri, possiamo aiutarti a trovare una soluzione. Contattaci per una consulenza gratuita e senza impegno."
+    question: "Posso aderire alla rete se lavoro già come agente per un'altra compagnia?",
+    answer: "Ogni situazione viene valutata individualmente. Contattaci per una consulenza gratuita e analizzeremo insieme le opzioni più adatte al tuo profilo e ai tuoi impegni contrattuali attuali."
   },
   {
-    question: "È possibile estinguere anticipatamente la Cessione del Quinto?",
-    answer: "Sì, è possibile estinguere anticipatamente il prestito. Ti consigliamo di contattarci per conoscere le condizioni specifiche e le eventuali penali di estinzione anticipata previste dal tuo contratto."
+    question: "È possibile lavorare in modo indipendente pur facendo parte della rete?",
+    answer: "Sì, i nostri consulenti mantengono piena autonomia nella gestione del proprio lavoro e portafoglio. Retivita ti fornisce gli strumenti e il supporto, tu scegli come e quando lavorare."
   },
   {
-    question: "Quanto costa la consulenza iniziale con Creditplan?",
-    answer: "La consulenza iniziale con Creditplan è completamente gratuita e senza impegno. I nostri esperti ti guideranno nella valutazione della tua situazione e ti aiuteranno a trovare la soluzione migliore per le tue esigenze."
+    question: "Quanto tempo ci vuole per iniziare a produrre dopo l'adesione?",
+    answer: "Il processo di onboarding è rapido. Dopo la formalizzazione della collaborazione, accedi immediatamente alla piattaforma formativa e al catalogo prodotti. La maggior parte dei nostri consulenti inizia a collocare polizze già nella prima settimana."
   }
 ];
 
@@ -56,7 +56,7 @@ export function FAQSection() {
             Domande Frequenti
           </h2>
           <p className="text-xl text-slate-600">
-            Tutte le risposte alle domande più comuni
+            Tutto quello che devi sapere per entrare nella rete Retivita
           </p>
         </div>
 

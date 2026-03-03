@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://creditplan.it';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://retivita.it';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date();
@@ -18,19 +18,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
-      url: `${siteUrl}/finanziamenti-condomini`,
+      url: `${siteUrl}/diventa-consulente`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${siteUrl}/ristrutturazioni`,
+      url: `${siteUrl}/prodotti-assicurativi`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: `${siteUrl}/efficienza-energetica`,
+      url: `${siteUrl}/formazione`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.8,

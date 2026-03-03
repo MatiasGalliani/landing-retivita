@@ -15,23 +15,24 @@ const formSchema = z.object({
   cognome: z.string().min(2, "Il cognome deve contenere almeno 2 caratteri"),
   mail: z.string().email("Inserisci un indirizzo email valido"),
   telefono: z.string().min(10, "Il numero di telefono deve contenere almeno 10 cifre"),
-  impiego: z.string().min(1, "Seleziona il tuo impiego"),
-  nettoMensile: z.string().min(1, "Inserisci il tuo reddito netto mensile").refine(
-    (val) => !isNaN(Number(val)) && Number(val) > 0,
-    "Inserisci un importo valido"
+  impiego: z.string().min(1, "Seleziona il tuo ruolo attuale"),
+  nettoMensile: z.string().min(1, "Inserisci gli anni di esperienza nel settore").refine(
+    (val) => !isNaN(Number(val)) && Number(val) >= 0,
+    "Inserisci un valore valido"
   ),
-  importoRichiesto: z.string().min(1, "Inserisci l'importo richiesto").refine(
-    (val) => !isNaN(Number(val)) && Number(val) > 0,
+  importoRichiesto: z.string().min(1, "Inserisci il volume premi stimato").refine(
+    (val) => !isNaN(Number(val)) && Number(val) >= 0,
     "Inserisci un importo valido"
   ),
 });
 
 const IMPIEGO_OPTIONS = [
-  "Dipendente statale",
-  "Dipendente Pubblico",
-  "Dipendente Parapubblico",
-  "Dipendente azienda privata con più di 16 impiegati",
-  "Pensionato",
+  "Agente monomandatario",
+  "Agente plurimandatario",
+  "Broker assicurativo",
+  "Consulente finanziario / promotore",
+  "Sub-agente",
+  "Nessuna esperienza nel settore",
 ] as const;
 
 export function FormSection() {
@@ -111,12 +112,12 @@ export function FormSection() {
         <CardHeader className="space-y-3 pb-6">
           <div className="text-center">
             <CardTitle className="text-2xl lg:text-3xl font-bold text-slate-900 mb-2">
-              {currentStep === 1 ? "Richiedi informazioni" : "Quasi fatto!"}
+              {currentStep === 1 ? "Candidati alla Rete" : "Ultimo passaggio"}
             </CardTitle>
             <p className="text-sm lg:text-base text-slate-600">
               {currentStep === 1
-                ? "Compila il form per essere ricontattato"
-                : "Inserisci i dati per calcolare la tua rata"}
+                ? "Compila il form per essere contattato da un responsabile"
+                : "Dimmi di più sulla tua esperienza nel settore"}
             </p>
           </div>
         </CardHeader>
@@ -210,7 +211,7 @@ export function FormSection() {
                   onClick={onNext}
                   className="w-full h-12 bg-[#090075] hover:bg-[#0a0090] text-white font-bold text-lg cursor-pointer"
                 >
-                  Ottieni il Preventivo Gratuito →
+                  Procedi con la Candidatura →
                 </Button>
               </div>
             ) : (
@@ -220,13 +221,13 @@ export function FormSection() {
                   name="impiego"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Impiego</FormLabel>
+                      <FormLabel>Ruolo attuale</FormLabel>
                       <FormControl>
                         <select
                           {...field}
                           className="flex h-12 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         >
-                          <option value="">Impiego</option>
+                          <option value="">Seleziona il tuo ruolo</option>
                           {IMPIEGO_OPTIONS.map((option) => (
                             <option key={option} value={option}>
                               {option}
@@ -244,11 +245,11 @@ export function FormSection() {
                   name="nettoMensile"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Netto mensile</FormLabel>
+                      <FormLabel>Anni di esperienza nel settore</FormLabel>
                       <FormControl>
                         <Input
                           type="number"
-                          placeholder="Es. 1500"
+                          placeholder="Es. 5"
                           {...field}
                           onChange={(e) => field.onChange(e.target.value)}
                         />
@@ -263,11 +264,11 @@ export function FormSection() {
                   name="importoRichiesto"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Importo richiesto</FormLabel>
+                      <FormLabel>Volume premi annuo stimato (€)</FormLabel>
                       <FormControl>
                         <Input
                           type="number"
-                          placeholder="Es. 25000"
+                          placeholder="Es. 50000"
                           {...field}
                           onChange={(e) => field.onChange(e.target.value)}
                         />
@@ -291,7 +292,7 @@ export function FormSection() {
                     disabled={isLoading}
                     className="flex-1 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-lg"
                   >
-                    {isLoading ? "Invio in corso..." : "Calcola la Tua Rata →"}
+                    {isLoading ? "Invio in corso..." : "Invia la Candidatura →"}
                   </Button>
                 </div>
               </form>

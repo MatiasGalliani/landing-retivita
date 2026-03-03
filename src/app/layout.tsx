@@ -18,10 +18,10 @@ const geistMono = Geist_Mono({
   preload: false,
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://creditplan.it';
-const siteName = 'AICondomini';
-const defaultTitle = 'Finanziamenti per Condomini | Mediazione Creditizia | AICondomini';
-const defaultDescription = 'Soluzioni finanziarie per condomini: ristrutturazioni, efficienza energetica e manutenzione straordinaria. Mediazione creditizia specializzata con delibere veloci e supporto completo.';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://retivita.it';
+const siteName = 'Retivita';
+const defaultTitle = 'Retivita | Entra nella Rete dei Consulenti Assicurativi';
+const defaultDescription = 'Unisciti a Retivita, la rete italiana di consulenti assicurativi. Prodotti esclusivi, alte provvigioni, formazione continua e supporto commerciale per far crescere il tuo business nel settore assicurativo.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -31,30 +31,30 @@ export const metadata: Metadata = {
   },
   description: defaultDescription,
   keywords: [
-    "finanziamento condominio",
-    "prestito condominio",
-    "mediazione creditizia condominio",
-    "ristrutturazione condominio",
-    "efficienza energetica condominio",
-    "cappotto termico finanziamento",
-    "rifacimento facciata condominio",
-    "installazione ascensore condominio",
-    "fotovoltaico condominio",
-    "eco bonus condominio",
-    "superbonus condominio",
-    "amministratore condominio finanziamento",
-    "delibera condominio",
-    "lavori straordinari condominio",
-    "manutenzione straordinaria condominio",
-    "creditplan condominio",
-    "AICondomini",
-    "finanziamento lavori condominiali",
-    "prestito per lavori condominio",
-    "società mediazione creditizia",
+    "consulente assicurativo",
+    "agente assicurazioni",
+    "rete distribuzione assicurativa",
+    "lavoro assicurazioni",
+    "diventare agente assicurativo",
+    "provvigioni assicurazioni",
+    "RUI IVASS",
+    "broker assicurativo",
+    "polizze vita",
+    "previdenza integrativa",
+    "protezione reddito",
+    "rete agenti assicurativi",
+    "carriera assicurazioni",
+    "formazione assicurativa",
+    "retivita consulenti",
+    "guadagnare con le assicurazioni",
+    "portafoglio assicurativo",
+    "collocamento polizze",
+    "intermediario assicurativo",
+    "opportunità lavoro assicurazioni Italia",
   ],
-  authors: [{ name: "AICondomini - Creditplan Italia Network di Mediazione Creditizia" }],
-  creator: "AICondomini",
-  publisher: "AICondomini",
+  authors: [{ name: "Retivita - Rete Italiana di Consulenti Assicurativi" }],
+  creator: "Retivita",
+  publisher: "Retivita",
   formatDetection: {
     telephone: true,
     date: false,
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
         url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "AICondomini - Finanziamenti per Condomini",
+        alt: "Retivita - La Rete dei Consulenti Assicurativi",
         type: "image/jpeg",
       },
     ],
@@ -104,8 +104,8 @@ export const metadata: Metadata = {
     yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
     yahoo: process.env.NEXT_PUBLIC_YAHOO_VERIFICATION,
   },
-  category: "Mediazione Creditizia",
-  classification: "Credit Brokerage Services",
+  category: "Distribuzione Assicurativa",
+  classification: "Insurance Distribution Network",
   other: {
     'format-detection': 'telephone=yes',
     'mobile-web-app-capable': 'yes',

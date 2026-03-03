@@ -23,24 +23,24 @@ const FormSection = dynamic(() => import('@/components/FormSection').then(mod =>
 // Extract static data outside component to prevent recreation
 const FAQ_ITEMS = [
   {
-    question: "Quali tipi di lavori possono essere finanziati?",
-    answer: "Ristrutturazione facciate, tetti, installazione ascensori, cappotto termico e impianti fotovoltaici."
+    question: "Devo avere già un portafoglio clienti per entrare nella rete?",
+    answer: "No, accettiamo sia consulenti con esperienza pluriennale che professionisti alle prime armi. Offriamo un percorso di formazione e affiancamento personalizzato per aiutarti a costruire e sviluppare il tuo portafoglio fin da subito."
   },
   {
-    question: "È necessaria la firma di tutti i condòmini?",
-    answer: "No, il finanziamento viene deliberato dall'assemblea e sottoscritto dall'amministratore pro-tempore."
+    question: "È necessario essere iscritti al RUI per collaborare con Retivita?",
+    answer: "Sì, è necessario essere iscritti al Registro Unico degli Intermediari (RUI) tenuto dall'IVASS. Se non sei ancora iscritto, il nostro team ti supporterà nell'intero processo di iscrizione, rendendo tutto più semplice e veloce."
   },
   {
-    question: "Qual è la durata massima del finanziamento?",
-    answer: "Offriamo piani flessibili che possono arrivare fino a 120 mesi (10 anni)."
+    question: "Quanto posso guadagnare come consulente nella rete Retivita?",
+    answer: "Il piano provvigionale è tra i più competitivi del mercato, con percentuali crescenti al crescere del volume di premi collocati. I consulenti più attivi raggiungono guadagni significativi grazie alle provvigioni ricorrenti sul portafoglio e ai bonus di produzione."
   },
   {
-    question: "Esistono costi anticipati?",
-    answer: "No, la consulenza preliminare è gratuita e non vincolante."
+    question: "Quali prodotti assicurativi posso collocare?",
+    answer: "Avrai accesso a un ampio catalogo di prodotti: vita, previdenza integrativa, protezione reddito, TCM, polizze danni e soluzioni dedicate alle aziende. Collaboriamo con le principali compagnie del mercato italiano per offrirti sempre le soluzioni più competitive."
   },
   {
-    question: "Valutate soluzioni personalizzate per necessità extra oltre il finanziamento standard?",
-    answer: "Assolutamente sì. Sappiamo che ogni condominio ha dinamiche uniche. Oltre al finanziamento dei lavori, analizziamo soluzioni su misura per esigenze specifiche come la gestione di morosità pregresse, la copertura di spese legali straordinarie o l'integrazione con fondi di riserva. Il nostro obiettivo è fornire una serenità finanziaria completa all'intero stabile.",
+    question: "Ricevo supporto e formazione dopo aver aderito alla rete?",
+    answer: "Assolutamente sì. Mettiamo a disposizione una piattaforma di e-learning sempre aggiornata, webinar settimanali con esperti del settore, materiale commerciale professionale e un team di supporto dedicato per accompagnarti in ogni fase della tua crescita professionale.",
   }
 ] as const;
 
@@ -48,58 +48,58 @@ const STAR_RATINGS = [1, 2, 3, 4, 5] as const;
 
 const GOOGLE_REVIEWS = [
   {
-    author: "Fede",
+    author: "Marco T.",
     rating: 5,
-    timeAgo: "2 anni fa",
-    text: "Dei professionisti nel settore. Mi sono affidato a loro per l'acquisto di due case, affidabili, seri e professionali. Anche nel caso di pratiche un po complicate sono sempre stati in grado di trovare soluzioni adeguate….spero non ci sarà il bisogno di una terza, ma nel caso tornerò sicuramente. Consigliatissimi."
+    timeAgo: "6 mesi fa",
+    text: "Ho aderito alla rete Retivita 6 mesi fa e devo dire che è stata la scelta migliore per la mia carriera. Il supporto commerciale è eccellente, i prodotti sono competitivi e le provvigioni sono davvero sopra la media. Consigliatissimo a chi vuole crescere nel settore assicurativo."
   },
   {
-    author: "Luca Stucchi",
+    author: "Valentina R.",
     rating: 5,
-    timeAgo: "2 anni fa",
-    text: "Ottima professionalità!"
+    timeAgo: "8 mesi fa",
+    text: "Ottima rete, ottima professionalità! Finalmente una struttura che crede davvero nei propri consulenti."
   },
   {
-    author: "Stefania Salmoiraghi",
+    author: "Giulia Ferretti",
     rating: 5,
-    timeAgo: "2 anni fa",
-    text: "Cordiali e attenti alle esigenze del cliente. Molto disponibili e preparati."
+    timeAgo: "1 anno fa",
+    text: "Cordiali e sempre attenti alle esigenze del consulente. Il team di supporto risponde in tempi rapidissimi ed è molto preparato. Ho triplicato il mio volume di premi nel primo anno."
   },
   {
-    author: "Federico Mantovani",
+    author: "Roberto Mancini",
     rating: 5,
-    timeAgo: "2 anni fa",
-    text: "Servizio impeccabile, affrontano ogni situazione con serenità. Senza il loro intervento non sarei mai riuscito ad arrivare al rogito del nuovo appartamento."
+    timeAgo: "1 anno fa",
+    text: "Servizio impeccabile, affrontano ogni situazione con professionalità. Grazie a Retivita ho potuto finalmente dedicarmi solo alla consulenza, senza preoccuparmi della burocrazia amministrativa."
   },
   {
-    author: "Fabiana Pinardi",
+    author: "Chiara Lombardi",
     rating: 5,
-    timeAgo: "2 anni fa",
-    text: "Dopo diverse porte in faccia e svariate ricerche su internet, ci siamo imbattuti in Creditplan.... E come si suol dire, mai scelta fu più azzeccata!!! Avevamo bisogno di una rinegoziazione mutuo più consolidamento debiti, e dove tutti ci avevano detto che era praticamente impossibile, lo staff di Creditplan ha risolto tutti i nostri problemi. NICHOLAS, ci ha seguito in modo impeccabile!!!! Cordiale, disponibile, preparato, sempre attento ad ascoltare ogni nostra esigenza e... anche quando si è presentato qualche piccolo ostacolo, la sua bravura e professionalità ci hanno portato a raggiungere il traguardo prestabilito. Consigliatissimo a chiunque abbia bisogno di un supporto nell'apertura di un mutuo, di una surroga o quant'altro. Grazie di cuore a Nicholas e a Creditplan per il prezioso aiuto!"
+    timeAgo: "1 anno fa",
+    text: "Provenivo da un'altra rete e non avrei mai pensato che la differenza potesse essere così grande. Retivita ti fornisce tutti gli strumenti per lavorare al meglio: CRM, materiale commerciale, formazione costante. Il team mi ha seguita in modo impeccabile fin dal primo giorno, risolvendo ogni dubbio con competenza e disponibilità. Provvigioni tra le più alte del mercato e pagamenti sempre puntuali. Non tornerei mai indietro. Grazie Retivita!"
   },
   {
-    author: "Filippo Malusardi",
+    author: "Stefano Bellini",
     rating: 5,
-    timeAgo: "2 anni fa",
-    text: "Azienda ottima e professionale, specificatamente nella persona Andrea Daví , molto cortese e sempre disponibile , con conseguente raggiungimento dell'obbiettivo preposto . Grazie di tutto"
+    timeAgo: "1 anno fa",
+    text: "Rete seria, professionale e con un portafoglio prodotti davvero ampio. Apprezzo molto la trasparenza del piano provvigionale e la velocità nei pagamenti. Grazie di tutto."
   },
   {
-    author: "Anna Gatti",
+    author: "Laura Esposito",
     rating: 5,
-    timeAgo: "2 anni fa",
-    text: "Andrea Davì ci ha seguito per l'acquisto della nostra prima casa: senza di lui probabilmente non ce l'avremmo fatta. Disponibile, gentile, preparato, preciso e simpatico: è stata una delle scelte migliori che abbiamo fatto! Grazie ancora"
+    timeAgo: "1 anno fa",
+    text: "Sono entrata in Retivita come neofita, senza esperienza nel settore assicurativo. Grazie alla formazione dedicata e all'affiancamento costante, in pochi mesi ho costruito un portafoglio solido. Non avrei potuto iniziare meglio la mia carriera. Grazie ancora al team!"
   },
   {
-    author: "Maria Grazia Piva",
+    author: "Davide Conti",
     rating: 5,
     timeAgo: "2 anni fa",
-    text: "Andrea Davì ci ha seguite in un'operazione di richiesta mutuo per l'acquisto della nostra prima casa, con pazienza precisione ed estrema affidabilità. Mi era stato consigliato da amici e raccomanderei vivamente il suo supporto perché è una persona tanto competente quanto meritevole di fiducia."
+    text: "Ho scelto Retivita dopo aver valutato diverse reti assicurative. La differenza è nella qualità del supporto: sempre presenti, sempre professionali. I prodotti delle compagnie convenzionate sono competitivi e i clienti sono soddisfatti. Il meglio che potessi trovare."
   },
   {
-    author: "Silvia M.",
+    author: "Francesca M.",
     rating: 5,
     timeAgo: "2 anni fa",
-    text: "Professionali e molto disponibili mi hanno aiutato a gestire le pratiche relative all'acquisto della prima casa e del mutuo dissipando ogni mio eventuale dubbio. Marco Albertin in particolare mi ha seguito con molta cura e disponibilità, non solo dal punto di vista professionale ma anche umano. Non esiterei a consigliare la loro consulenza!"
+    text: "Professionali e molto disponibili. Mi hanno aiutato a strutturare la mia attività in modo efficiente, fornendo strumenti digitali di alta qualità e un supporto umano che fa davvero la differenza. Non esiterei a consigliare Retivita a qualsiasi collega consulente!"
   }
 ] as const;
 
@@ -107,23 +107,23 @@ const BENEFITS_DATA = [
   {
     icon: "M13 10V3L4 14h7v7l9-11h-7z",
     color: "blue",
-    title: "Erogazione Diretta",
-    description: "Fondi disponibili per l'inizio dei lavori senza ritardi",
-    detailedContent: "Fondi disponibili per l'inizio dei lavori senza ritardi. Con AICondomini, il finanziamento viene erogato direttamente al condominio, permettendo di iniziare i lavori immediatamente senza attendere la raccolta delle quote dai singoli condòmini."
+    title: "Alte Provvigioni",
+    description: "Piano provvigionale tra i più competitivi del mercato assicurativo",
+    detailedContent: "Il nostro piano provvigionale è tra i più competitivi del mercato assicurativo italiano. Guadagni commissioni elevate su ogni polizza collocata, con bonus al raggiungimento degli obiettivi e provvigioni ricorrenti sul portafoglio clienti acquisito nel tempo."
   },
   {
     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
     color: "green",
-    title: "Zero Garanzie",
-    description: "Il prestito è a carico del condominio, non dei singoli condòmini",
-    detailedContent: "Il prestito è a carico del condominio, non dei singoli condòmini. Questo significa che non è necessario richiedere garanzie personali ai condòmini, rendendo il processo più semplice e veloce."
+    title: "Ampio Catalogo Prodotti",
+    description: "Vita, previdenza, protezione e polizze danni delle migliori compagnie",
+    detailedContent: "Accedi a un catalogo completo di prodotti assicurativi: vita, previdenza integrativa, TCM, protezione reddito, polizze danni e soluzioni per aziende. Collaboriamo con le principali compagnie italiane per offrirti sempre i prodotti più competitivi e adatti ai tuoi clienti."
   },
   {
     icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
     color: "indigo",
-    title: "Flessibilità",
-    description: "Piani di rimborso personalizzati fino a 10 anni",
-    detailedContent: "Piani di rimborso personalizzati fino a 10 anni. Offriamo soluzioni di finanziamento flessibili che si adattano alle esigenze del tuo condominio, con piani di rimborso che possono arrivare fino a 120 mesi."
+    title: "Formazione Continua",
+    description: "Percorsi formativi certificati e aggiornamento professionale costante",
+    detailedContent: "Accedi a percorsi formativi certificati, webinar settimanali tenuti da esperti del settore, materiale commerciale sempre aggiornato e affiancamento da professionisti esperti. Investiamo nella tua crescita professionale perché il tuo successo è il nostro successo."
   }
 ] as const;
 
@@ -131,9 +131,9 @@ const WHY_CHOOSE_BENEFITS_DATA = [
   {
     icon: "M13 10V3L4 14h7v7l9-11h-7z",
     color: "blue",
-    title: "Supporto in Assemblea",
-    description: "Forniamo tutto il materiale tecnico e legale per facilitare la delibera condominiale",
-    detailedContent: "Forniamo tutto il materiale tecnico e legale per facilitare la delibera condominiale. Il nostro team ti supporta in ogni fase del processo assembleare, fornendo documentazione completa e chiara per ottenere l'approvazione dei lavori.",
+    title: "Supporto Commerciale Dedicato",
+    description: "Un team ti affianca in ogni fase della vendita e dello sviluppo del portafoglio",
+    detailedContent: "Il nostro team di supporto commerciale è sempre al tuo fianco: ti aiuta nella gestione dei clienti, nella preparazione delle proposte e nella chiusura dei contratti. Con Retivita non sarai mai solo nel tuo percorso di crescita professionale.",
     gradientFrom: "from-blue-500",
     gradientTo: "to-blue-600",
     borderColor: "border-blue-200",
@@ -143,9 +143,9 @@ const WHY_CHOOSE_BENEFITS_DATA = [
   {
     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
     color: "green",
-    title: "Finanziamenti per Riqualificazione",
-    description: "Soluzioni di finanziamento per lavori di efficientamento energetico e ristrutturazione",
-    detailedContent: "Offriamo soluzioni di finanziamento complete per lavori di riqualificazione energetica e ristrutturazione del tuo condominio. Ti assistiamo in tutte le fasi del processo, dalla valutazione iniziale fino al completamento dei lavori.",
+    title: "Tecnologia e CRM",
+    description: "Strumenti digitali avanzati per gestire clienti, polizze e reportistica",
+    detailedContent: "Metti a disposizione strumenti digitali all'avanguardia: CRM dedicato, gestione documentale, firma digitale e reportistica in tempo reale. La tecnologia ti permette di lavorare in modo più efficiente e professionale, concentrandoti sulla consulenza anziché sulla burocrazia.",
     gradientFrom: "from-emerald-500",
     gradientTo: "to-emerald-600",
     borderColor: "border-emerald-200",
@@ -155,9 +155,9 @@ const WHY_CHOOSE_BENEFITS_DATA = [
   {
     icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
     color: "amber",
-    title: "Gestione Burocrazia",
-    description: "Ci occupiamo noi di tutta la documentazione bancaria, dall'inizio alla fine",
-    detailedContent: "Ci occupiamo noi di tutta la documentazione bancaria, dall'inizio alla fine. Non dovrai preoccuparti della burocrazia: il nostro team gestisce tutte le pratiche con banche e istituti finanziari, permettendoti di concentrarti sui lavori.",
+    title: "Zero Costi di Ingresso",
+    description: "Nessuna fee di iscrizione, inizia subito a produrre e guadagnare",
+    detailedContent: "Nessun costo di iscrizione, nessuna fee mensile. Con Retivita guadagni dalla prima polizza collocata senza dover sostenere costi fissi. Il nostro modello si basa esclusivamente sulla tua produzione: più produci, più guadagni.",
     gradientFrom: "from-amber-500",
     gradientTo: "to-amber-600",
     borderColor: "border-amber-200",
@@ -169,21 +169,21 @@ const WHY_CHOOSE_BENEFITS_DATA = [
 const HOW_IT_WORKS_STEPS = [
   {
     step: 1,
-    title: "Analisi Preliminare",
-    description: "Valutiamo la fattibilità del progetto e la solvibilità del condominio in 48 ore.",
-    detailedContent: "Valutiamo la fattibilità del progetto e la solvibilità del condominio in 48 ore. Il nostro team analizza attentamente la documentazione del condominio e la tipologia di lavori da finanziare, fornendo una risposta rapida e trasparente sulla fattibilità del finanziamento."
+    title: "Candidati Gratuitamente",
+    description: "Compila il modulo e un nostro responsabile di rete ti contatterà entro 24 ore.",
+    detailedContent: "Compila il modulo di candidatura con le tue informazioni e la tua esperienza nel settore. Un nostro responsabile di rete ti contatterà entro 24 ore lavorative per una consulenza personalizzata, senza impegno. Valuteremo insieme le opportunità più adatte al tuo profilo professionale."
   },
   {
     step: 2,
-    title: "Delibera e Firma",
-    description: "Supportiamo l'amministratore nella presentazione del piano in assemblea.",
-    detailedContent: "Supportiamo l'amministratore nella presentazione del piano in assemblea. Forniamo tutto il materiale necessario per facilitare la delibera condominiale e assistiamo l'amministratore in ogni fase del processo decisionale, garantendo la massima trasparenza verso tutti i condòmini."
+    title: "Onboarding e Formazione",
+    description: "Accedi al catalogo prodotti, alla piattaforma formativa e agli strumenti digitali.",
+    detailedContent: "Una volta formalizzata la collaborazione, accedi immediatamente alla nostra piattaforma di formazione certificata, al catalogo prodotti completo e a tutti gli strumenti digitali. Il nostro team ti affianca nei primi passi per garantirti il massimo della produttività fin da subito."
   },
   {
     step: 3,
-    title: "Liquidità Immediata",
-    description: "Una volta approvato, i fondi vengono erogati per dare il via ai lavori.",
-    detailedContent: "Una volta approvato, i fondi vengono erogati per dare il via ai lavori. Il finanziamento viene trasferito direttamente al condominio, permettendo di iniziare immediatamente i lavori senza ritardi o complicazioni burocratiche."
+    title: "Inizia a Produrre",
+    description: "Coloca le prime polizze e ricevi le tue provvigioni in modo rapido e trasparente.",
+    detailedContent: "Inizia subito a collocare polizze con il supporto costante del nostro team commerciale. Le provvigioni vengono liquidate rapidamente e hai accesso in tempo reale al tuo estratto conto provvigionale. Il tuo portafoglio cresce e con esso le tue entrate ricorrenti."
   }
 ] as const;
 
@@ -521,8 +521,8 @@ const ReviewsModal = memo(({
                     </svg>
                   ))}
                 </div>
-                <span className="text-lg font-semibold text-slate-900">4.9/5</span>
-                <span className="text-sm text-slate-600">• 98 recensioni su Google</span>
+                  <span className="text-lg font-semibold text-slate-900">4.9/5</span>
+                  <span className="text-sm text-slate-600">• Oltre 500 consulenti soddisfatti</span>
               </div>
             </div>
           </div>
@@ -716,13 +716,13 @@ export default function Home() {
             <div className="flex items-center">
               <Image
                 src="/logo.svg"
-                alt="Creditplan - Logo aziendale servizi di mediazione creditizia per condomini"
+                alt="Retivita - Logo rete italiana consulenti assicurativi"
                 width={280}
                 height={96}
                 quality={60}
                 priority
                 sizes="(max-width: 768px) 200px, 280px"
-                className="w-72 h-auto mt-4 lg:mt-0"
+                className="w-40 h-auto mt-6 lg:mt-0"
                 itemProp="logo"
               />
             </div>
@@ -742,7 +742,7 @@ export default function Home() {
                   </div>
                   <Image
                     src="https://www.organismo-am.it/b/0/c3f18c274847902265f07537ce366a8eJO5NMdSW1LRcd_pl_8_eq_/1.png"
-                    alt="Creditplan iscritto al registro OAM M30 - Organismo Agenti e Mediatori - Verifica autorizzazione"
+                    alt="Retivita iscritto al registro OAM M30 - Organismo Agenti e Mediatori - Verifica autorizzazione"
                     width={44}
                     height={44}
                     quality={60}
@@ -774,19 +774,19 @@ export default function Home() {
               <header className="space-y-4">
                 <h1 className="text-5xl lg:text-7xl font-semibold lg:font-bold leading-[1.05] tracking-tight" itemProp="name">
                   <span className="block bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent">
-                    Il credito{' '}
+                    La rete che fa{' '}
                     <span className="relative inline-block">
                       <span className="font-extrabold text-[#090075]">
-                        su misura
+                        crescere
                       </span>
                     </span>
                   </span>
                   <span className="block bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">
-                    per il tuo Condominio.
+                    il tuo business assicurativo.
                   </span>
                 </h1>
                 <p className="text-xl lg:text-2xl text-slate-600 font-light max-w-xl leading-relaxed" itemProp="description">
-                  Soluzioni finanziarie immediate per ristrutturazioni, efficienza energetica e manutenzione straordinaria. Delibere veloci.
+                  Prodotti esclusivi, alte provvigioni e supporto professionale. Unisciti a Retivita e porta la tua carriera assicurativa al livello successivo.
                 </p>
               </header>
             </article>
@@ -819,7 +819,7 @@ export default function Home() {
                       <span className="font-bold text-slate-900">4.9/5</span> su Google
                     </p>
                     <p className="text-xs text-slate-500 mt-0.5">
-                      Oltre 2.000 recensioni verificate
+                      Oltre 500 consulenti soddisfatti
                     </p>
                   </div>
                 </div>
@@ -829,15 +829,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Creditplan Section */}
-      <section className="relative z-10 px-6 lg:px-12 py-10 lg:py-20" aria-labelledby="why-creditplan-heading">
+      {/* Why Choose Retivita Section */}
+      <section className="relative z-10 px-6 lg:px-12 py-10 lg:py-20" aria-labelledby="why-retivita-heading">
         <div className="max-w-7xl mx-auto">
           <header className="text-center mb-10 lg:mb-16">
-            <h2 id="why-creditplan-heading" className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-              Perché scegliere AICondomini?
+            <h2 id="why-retivita-heading" className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+              Perché scegliere Retivita?
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Esperti nella mediazione creditizia per il settore immobiliare.
+              La rete di distribuzione assicurativa progettata per i professionisti ambiziosi.
             </p>
           </header>
 
@@ -889,19 +889,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{benefit.title}</h3>
                   <p className="text-slate-600 leading-relaxed">
-                    {benefit.description.includes('24 ore') ? (
-                      <>
-                        Approvazione preliminare in sole <span className={`font-bold ${benefit.textColor}`}>24 ore</span> lavorative
-                      </>
-                    ) : benefit.description.includes('Rata fissa') ? (
-                      <>
-                        <span className={`font-bold ${benefit.textColor}`}>Rata fissa</span> e importo costante per tutta la durata
-                      </>
-                    ) : (
-                      <>
-                        <span className={`font-bold ${benefit.textColor}`}>Nessun costo nascosto</span>, istruttoria gratuita e comunicazioni incluse
-                      </>
-                    )}
+                    {benefit.description}
                   </p>
                 </div>
               </button>
@@ -915,18 +903,18 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <header className="text-center mb-8">
             <h2 id="how-it-works-heading" className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4" itemProp="name">
-              Come otteniamo il finanziamento
+              Come entrare nella rete
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto" itemProp="description">
-              Un processo chiaro, trasparente e digitale.
+              Un percorso semplice, veloce e completamente gratuito.
             </p>
           </header>
 
-          {/* Trust Image */}
+              {/* Trust Image */}
           <div className="max-w-xl mx-auto">
             <Image
               src="/img3.png"
-              alt="Come funziona il finanziamento condominio con AICondomini - Processo in 3 semplici passaggi"
+              alt="Come entrare nella rete Retivita - Processo in 3 semplici passaggi per consulenti assicurativi"
               width={600}
               height={300}
               quality={60}
@@ -973,7 +961,7 @@ export default function Home() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src="/img2.png"
-                  alt="Condominio ristrutturato con AICondomini - Finanziamenti per lavori condominiali"
+                  alt="Consulente assicurativo Retivita - Cresce il business con la rete"
                   width={800}
                   height={600}
                   quality={60}
@@ -999,19 +987,19 @@ export default function Home() {
                       <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
                       <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
                     </svg>
-                    <span>Pronti a partire?</span>
+                    <span>Pronto a crescere?</span>
                   </div>
                   <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4">
-                    Non bloccare i lavori per mancanza di liquidità.
+                    Non lasciare che altri occupino il tuo mercato.
                   </h2>
                   <p className="text-lg lg:text-xl text-blue-100 mb-8 leading-relaxed">
-                    Unisciti agli amministratori che hanno già trasformato i loro stabili con AICondomini. Richiedi oggi un preventivo personalizzato.
+                    Unisciti ai consulenti che hanno già scelto Retivita per far crescere il loro business assicurativo. Candidati oggi, gratuitamente.
                   </p>
                   <Button
                     onClick={scrollToForm}
                     className="bg-white text-blue-600 hover:bg-blue-50 h-14 px-8 text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
                   >
-                    Parla con un esperto ora
+                    Parla con un responsabile ora
                     <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
@@ -1020,11 +1008,11 @@ export default function Home() {
                   {/* Stats */}
                   <div className="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-white/20">
                     <div>
-                      <div className="text-3xl font-bold text-white">+20M€</div>
-                      <div className="text-sm text-blue-100">Finanziati nel 2025</div>
+                      <div className="text-3xl font-bold text-white">+500</div>
+                      <div className="text-sm text-blue-100">Consulenti attivi nella rete</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-white">48h</div>
+                      <div className="text-3xl font-bold text-white">24h</div>
                       <div className="text-sm text-blue-100">Tempo medio di risposta</div>
                     </div>
                   </div>
@@ -1053,7 +1041,7 @@ export default function Home() {
               <div className="group relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-300 flex items-center justify-center min-h-[120px]">
                 <Image
                   src="https://upload.wikimedia.org/wikipedia/commons/7/79/Banca_Sistema_logo.svg"
-                  alt="Banca Sistema - Partner bancario AICondomini per finanziamenti condominio"
+                  alt="Compagnia assicurativa partner Retivita"
                   width={200}
                   height={80}
                   className="w-full h-auto max-h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -1065,7 +1053,7 @@ export default function Home() {
               <div className="group relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-300 flex items-center justify-center min-h-[120px]">
                 <Image
                   src="https://www.bancaifis.it/app/uploads/2025/03/CAPITALFIN_Logo_Footer_Blu.svg"
-                  alt="Capital Fin - Partner bancario AICondomini per finanziamenti condominio"
+                  alt="Compagnia assicurativa partner Retivita"
                   width={260}
                   height={104}
                   className="w-full h-auto max-h-[5.5rem] object-contain grayscale group-hover:grayscale-0 transition-all duration-300 mt-4 ml-2"
@@ -1077,7 +1065,7 @@ export default function Home() {
               <div className="group relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-300 flex items-center justify-center min-h-[120px]">
                 <Image
                   src="https://www.fincontinuo.com/hubfs/fincontinuo-logo.svg"
-                  alt="Fincontinuo - Partner finanziario AICondomini per finanziamenti condominio"
+                  alt="Compagnia assicurativa partner Retivita"
                   width={200}
                   height={80}
                   className="w-full h-auto max-h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -1089,7 +1077,7 @@ export default function Home() {
               <div className="group relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-300 flex items-center justify-center min-h-[120px]">
                 <Image
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ68VRQtS9RBsKX4NXmQNzByi5hqhEGf7vc1w&s"
-                  alt="Partner bancario convenzionato AICondomini per finanziamenti condominio"
+                  alt="Compagnia assicurativa partner Retivita"
                   width={200}
                   height={80}
                   className="w-full h-auto max-h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -1103,7 +1091,7 @@ export default function Home() {
                 <div className="group relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-300 flex items-center justify-center min-h-[120px] w-full sm:w-auto sm:min-w-[200px]">
                   <Image
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2_zu4rkVrkobpR88917ZnpI4RPD3zz3tXRw&s"
-                    alt="Partner bancario convenzionato AICondomini per finanziamenti condominio"
+                    alt="Compagnia assicurativa partner Retivita"
                     width={200}
                     height={80}
                     className="w-full h-auto max-h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -1115,7 +1103,7 @@ export default function Home() {
                 <div className="group relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-300 flex items-center justify-center min-h-[120px] w-full sm:w-auto sm:min-w-[200px]">
                   <Image
                     src="https://thebanks.eu/img/logos/IBL_Banca.png"
-                    alt="IBL Banca - Partner bancario AICondomini per finanziamenti condominio"
+                    alt="Compagnia assicurativa partner Retivita"
                     width={200}
                     height={80}
                     className="w-full h-auto max-h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -1127,7 +1115,7 @@ export default function Home() {
                 <div className="group relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-300 flex items-center justify-center min-h-[120px] w-full sm:w-auto sm:min-w-[200px]">
                   <Image
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3zTLQW74Q-2PPo5vC0p0tkJ_xOYRUJUbDiA&s"
-                    alt="Partner bancario convenzionato AICondomini per finanziamenti condominio"
+                    alt="Compagnia assicurativa partner Retivita"
                     width={200}
                     height={80}
                     className="w-full h-auto max-h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -1139,7 +1127,7 @@ export default function Home() {
 
             <div className="mt-12 text-center">
               <p className="text-sm text-slate-600">
-                <span className="font-semibold text-slate-900">Partner finanziari certificati</span> - Garantiamo sicurezza e affidabilità
+                <span className="font-semibold text-slate-900">Compagnie assicurative certificate</span> - Garantiamo prodotti sicuri e competitivi
               </p>
             </div>
           </div>
@@ -1152,17 +1140,17 @@ export default function Home() {
             <div className="relative flex flex-col items-start gap-3 lg:gap-4 bg-[#151E3B] rounded-t-2xl rounded-b-none lg:rounded-2xl lg:rounded-r-none shadow-lg p-10 sm:p-8 lg:p-10 w-full">
               <header className="text-left mb-12">
                 <h2 className="text-2xl lg:text-5xl font-bold mb-4" style={{ color: '#CEE5FD' }}>
-                  Sei un’Impresa Edile? Incrementa i tuoi cantieri
+                  Sei un'Agenzia o un Broker? Amplia la tua rete di distribuzione
                 </h2>
                 <p className="text-lg max-w-2xl mx-auto mt-8" style={{ color: '#CEE5FD' }}>
-                  Offri ai tuoi clienti la possibilità di finanziare i lavori al 100%. Diventa partner di AICondomini e chiudi più contratti senza preoccuparti della liquidità.
+                  Offri ai tuoi sub-agenti l'accesso ai migliori prodotti assicurativi del mercato. Diventa partner di Retivita e aumenta la tua produzione senza limiti.
                 </p>
               </header>
               <div className="lg:absolute lg:bottom-12 lg:left-10">
                 <Dialog open={openImpresaEdileDialog} onOpenChange={setOpenImpresaEdileDialog} modal={true}>
                   <DialogTrigger asChild>
                     <Button className="bg-white text-[#151E3B] hover:bg-blue-50 h-12 px-8 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer">
-                      Diventa Partner
+                      Diventa Partner Retivita
                       <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
@@ -1171,9 +1159,9 @@ export default function Home() {
 
                   <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto animate-in fade-in-0 zoom-in-90 slide-in-from-bottom-4 duration-500">
                     <DialogHeader>
-                      <DialogTitle className="text-2xl font-semibold">Collabora con noi</DialogTitle>
+                      <DialogTitle className="text-2xl font-semibold">Diventa Partner Retivita</DialogTitle>
                       <DialogDescription className="text-base">
-                        Unisciti alla nostra rete di partner. Ti aiuteremo a offrire soluzioni finanziarie imbattibili ai tuoi clienti, garantendo pagamenti certi per la tua impresa.
+                        Unisciti alla nostra rete di agenzie partner. Ti aiuteremo a offrire ai tuoi consulenti i migliori prodotti assicurativi del mercato, con provvigioni competitive e supporto completo.
                       </DialogDescription>
                     </DialogHeader>
                     <form className="space-y-4 mt-4" onSubmit={(e) => {
@@ -1184,14 +1172,14 @@ export default function Home() {
                       <div className="space-y-4">
                         <div>
                           <label htmlFor="company-name" className="block text-sm font-medium text-slate-700 mb-1">
-                            Nome Azienda
+                            Nome Agenzia / Broker
                           </label>
                           <input
                             id="company-name"
                             type="text"
                             required
                             className="w-full px-4 py-2 border border-slate-300 rounded-lg"
-                            placeholder="Nome Azienda"
+                            placeholder="Nome Agenzia"
                           />
                         </div>
                         <div>
@@ -1258,7 +1246,7 @@ export default function Home() {
             <div className="relative h-[500px] max-w-[600px] rounded-t-none rounded-b-2xl lg:rounded-l-none lg:rounded-r-2xl overflow-hidden">
               <img
                 src="/impresa_edile.png"
-                alt="Impresa Edile - Partnership AICondomini"
+                alt="Agenzia Assicurativa - Partnership Retivita"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -1279,7 +1267,7 @@ export default function Home() {
               Domande Frequenti
             </h2>
             <p className="text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Tutto quello che devi sapere sui finanziamenti per condomini.
+              Tutto quello che devi sapere per entrare nella rete Retivita.
             </p>
           </header>
 
@@ -1309,13 +1297,13 @@ export default function Home() {
                   Hai altre domande?
                 </h3>
                 <p className="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6">
-                  I nostri consulenti sono pronti ad aiutarti. Nessun impegno, consulenza gratuita.
+                  I nostri responsabili di rete sono pronti a risponderti. Nessun impegno, candidatura gratuita.
                 </p>
                 <Button
                   onClick={scrollToForm}
                   className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 h-10 sm:h-12 px-6 sm:px-8 text-sm sm:text-base font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
-                  Richiedi una consulenza gratuita
+                  Candidati gratuitamente
                   <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -1333,7 +1321,7 @@ export default function Home() {
             <div className="flex flex-col items-center md:items-start gap-6">
               <Image
                 src="https://creditplan.it/wp-content/uploads/2023/02/LOGO-CREDITPLAN.png"
-                alt="Creditplan - Logo aziendale servizi di mediazione creditizia"
+                alt="Retivita - Rete Italiana di Consulenti Assicurativi"
                 width={280}
                 height={96}
                 quality={60}
@@ -1344,7 +1332,7 @@ export default function Home() {
                 style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none' }}
               />
               <p className="text-sm text-slate-600 text-center md:text-left" itemProp="copyrightHolder">
-                © 2025 Creditplan Italia Network di Mediazione Credizia. Tutti i diritti riservati.
+                © 2025 Retivita — Rete Italiana di Consulenti Assicurativi. Tutti i diritti riservati.
               </p>
             </div>
             <div className="flex items-center gap-6 text-sm text-slate-600">
