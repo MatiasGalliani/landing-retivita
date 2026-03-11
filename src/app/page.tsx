@@ -11,6 +11,15 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import { Badge } from "@/components/ui/badge"
+import { Separator } from "@/components/ui/separator"
+import { Card, CardContent } from "@/components/ui/card"
 import dynamic from 'next/dynamic';
 import { StructuredData } from "@/components/StructuredData";
 import { getLenis } from './smoothscroll'
@@ -21,29 +30,6 @@ const FormSection = dynamic(() => import('@/components/FormSection').then(mod =>
 });
 
 // Extract static data outside component to prevent recreation
-const FAQ_ITEMS = [
-  {
-    question: "Devo avere già un portafoglio clienti per entrare nella rete?",
-    answer: "No, accettiamo sia consulenti con esperienza pluriennale che professionisti alle prime armi. Offriamo un percorso di formazione e affiancamento personalizzato per aiutarti a costruire e sviluppare il tuo portafoglio fin da subito."
-  },
-  {
-    question: "È necessario essere iscritti al RUI per collaborare con Retivita?",
-    answer: "Sì, è necessario essere iscritti al Registro Unico degli Intermediari (RUI) tenuto dall'IVASS. Se non sei ancora iscritto, il nostro team ti supporterà nell'intero processo di iscrizione, rendendo tutto più semplice e veloce."
-  },
-  {
-    question: "Quanto posso guadagnare come consulente nella rete Retivita?",
-    answer: "Il piano provvigionale è tra i più competitivi del mercato, con percentuali crescenti al crescere del volume di premi collocati. I consulenti più attivi raggiungono guadagni significativi grazie alle provvigioni ricorrenti sul portafoglio e ai bonus di produzione."
-  },
-  {
-    question: "Quali prodotti assicurativi posso collocare?",
-    answer: "Avrai accesso a un ampio catalogo di prodotti: vita, previdenza integrativa, protezione reddito, TCM, polizze danni e soluzioni dedicate alle aziende. Collaboriamo con le principali compagnie del mercato italiano per offrirti sempre le soluzioni più competitive."
-  },
-  {
-    question: "Ricevo supporto e formazione dopo aver aderito alla rete?",
-    answer: "Assolutamente sì. Mettiamo a disposizione una piattaforma di e-learning sempre aggiornata, webinar settimanali con esperti del settore, materiale commerciale professionale e un team di supporto dedicato per accompagnarti in ogni fase della tua crescita professionale.",
-  }
-] as const;
-
 const STAR_RATINGS = [1, 2, 3, 4, 5] as const;
 
 const GOOGLE_REVIEWS = [
@@ -187,6 +173,120 @@ const HOW_IT_WORKS_STEPS = [
   }
 ] as const;
 
+const COSA_CAMBIA_ITEMS = [
+  {
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    color: "blue",
+    title: "Provvigioni al top di mercato",
+    description: "Accedi al piano provvigionale più competitivo del settore, con percentuali crescenti al crescere della produzione.",
+    detailedContent: "Il nostro piano provvigionale è strutturato per premiare chi produce. Le percentuali crescono progressivamente al crescere del volume di premi collocati, con bonus di produzione periodici e provvigioni ricorrenti sul portafoglio acquisito. È uno dei piani più competitivi dell'intero mercato assicurativo italiano.",
+  },
+  {
+    icon: "M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z",
+    color: "green",
+    title: "Zero vincoli di monomandato",
+    description: "Libertà assoluta di operare con più compagnie. Scegli i prodotti migliori per ogni cliente senza limitazioni.",
+    detailedContent: "Con Retivita non sei legato a una sola compagnia. Puoi operare in plurimandato, accedere al catalogo completo di più compagnie e scegliere ogni volta il prodotto più adatto al cliente. Libertà commerciale reale, senza pressioni di budget su singoli prodotti.",
+  },
+  {
+    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+    color: "indigo",
+    title: "Portafoglio completamente tuo",
+    description: "Il portafoglio clienti che costruisci resta di tua proprietà. È un patrimonio professionale reale che cresce nel tempo.",
+    detailedContent: "Il portafoglio che costruisci in Retivita è di tua proprietà esclusiva. Nessun vincolo di trasferimento, nessuna clausola di non concorrenza sui clienti. Le provvigioni ricorrenti che genera nel tempo rappresentano un vero patrimonio professionale che cresce anno dopo anno.",
+  },
+  {
+    icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
+    color: "amber",
+    title: "Accesso a più compagnie e prodotti",
+    description: "Un catalogo ampio e diversificato: vita, previdenza, protezione, danni. Sempre il prodotto giusto per ogni esigenza.",
+    detailedContent: "Hai accesso a un catalogo completo e aggiornato: polizze vita, previdenza integrativa, TCM, protezione reddito, polizze danni, soluzioni per aziende e molto altro. Collaboriamo con le principali compagnie italiane per garantirti sempre le soluzioni più competitive e adatte a ogni profilo cliente.",
+  },
+  {
+    icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
+    color: "purple",
+    title: "Possibilità di creare la tua rete",
+    description: "Non solo consulente: puoi costruire e coordinare il tuo team, moltiplicando il tuo reddito con provvigioni sulla produzione della rete.",
+    detailedContent: "Il modello Retivita ti permette di evolvere da consulente a imprenditore. Puoi reclutare, formare e coordinare il tuo team di consulenti, guadagnando provvigioni anche sulla loro produzione. È il modo più efficace per moltiplicare il tuo reddito senza moltiplicare il tuo tempo.",
+  },
+] as const;
+
+const PERCHE_CAMBIANO_ITEMS = [
+  "Provvigioni sempre più basse",
+  "Prodotti limitati e poco competitivi",
+  "Scarsa autonomia commerciale",
+  "Impossibilità di costruire un patrimonio professionale",
+] as const;
+
+const QUICK_FAQ_ITEMS = [
+  { question: "Devo lasciare la compagnia attuale?", answer: "No. Puoi continuare a lavorare con la tua compagnia attuale e aggiungere Retivita come canale aggiuntivo. Non chiediamo esclusiva." },
+  { question: "Posso mantenere il mio portafoglio?", answer: "Sì. Il portafoglio che porti con te e quello che costruisci nella rete restano completamente tuoi. Nessun vincolo di trasferimento." },
+  { question: "Serve partita IVA?", answer: "Sì. Per collaborare con Retivita è necessario avere una partita IVA attiva e l'iscrizione al RUI (Registro Unico degli Intermediari)." },
+  { question: "Quanto tempo serve per partire?", answer: "Pochi giorni. Una volta completata la valutazione del profilo, l'onboarding è rapido: accesso alla piattaforma, prodotti e supporto operativo in tempi brevissimi." },
+  { question: "Devo avere già un portafoglio clienti per entrare nella rete?", answer: "No, accettiamo sia consulenti con esperienza pluriennale che professionisti alle prime armi. Offriamo un percorso di formazione e affiancamento personalizzato per aiutarti a costruire e sviluppare il tuo portafoglio fin da subito." },
+  { question: "È necessario essere iscritti al RUI per collaborare con Retivita?", answer: "Sì, è necessario essere iscritti al Registro Unico degli Intermediari (RUI) tenuto dall'IVASS. Se non sei ancora iscritto, il nostro team ti supporterà nell'intero processo di iscrizione, rendendo tutto più semplice e veloce." },
+  { question: "Quanto posso guadagnare come consulente nella rete Retivita?", answer: "Il piano provvigionale è tra i più competitivi del mercato, con percentuali crescenti al crescere del volume di premi collocati. I consulenti più attivi raggiungono guadagni significativi grazie alle provvigioni ricorrenti sul portafoglio e ai bonus di produzione." },
+  { question: "Quali prodotti assicurativi posso collocare?", answer: "Avrai accesso a un ampio catalogo di prodotti: vita, previdenza integrativa, protezione reddito, TCM, polizze danni e soluzioni dedicate alle aziende. Collaboriamo con le principali compagnie del mercato italiano per offrirti sempre le soluzioni più competitive." },
+  { question: "Ricevo supporto e formazione dopo aver aderito alla rete?", answer: "Assolutamente sì. Mettiamo a disposizione una piattaforma di e-learning sempre aggiornata, webinar settimanali con esperti del settore, materiale commerciale professionale e un team di supporto dedicato per accompagnarti in ogni fase della tua crescita professionale." },
+] as const;
+
+// Cosa Cambia Modal Component
+const CosaModal = memo(({
+  isOpen,
+  onClose,
+  item
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  item: typeof COSA_CAMBIA_ITEMS[number] | null;
+}) => {
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleEscape = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isOpen, onClose]);
+
+  if (!isOpen || !item) return null;
+
+  const borderClass =
+    item.color === 'blue' ? 'border-blue-200' :
+    item.color === 'green' ? 'border-emerald-200' :
+    item.color === 'indigo' ? 'border-indigo-200' :
+    item.color === 'amber' ? 'border-amber-200' :
+    'border-purple-200';
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+      onClick={onClose}
+      style={{ animation: 'fadeIn 0.3s ease-out' }}
+    >
+      <div
+        className={`relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 border-2 ${borderClass}`}
+        onClick={(e) => e.stopPropagation()}
+        style={{ animation: 'slideUpAndScale 0.3s ease-out' }}
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors"
+          aria-label="Chiudi"
+        >
+          <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div className="flex flex-col items-center text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">{item.title}</h2>
+          <p className="text-lg text-slate-600 leading-relaxed">{item.detailedContent}</p>
+        </div>
+      </div>
+    </div>
+  );
+});
+
+CosaModal.displayName = 'CosaModal';
+
 // Memoized Benefit Card Component
 const BenefitCard = memo(({ icon, color, title, description, onClick }: {
   icon: string;
@@ -224,91 +324,6 @@ const BenefitCard = memo(({ icon, color, title, description, onClick }: {
 });
 
 BenefitCard.displayName = 'BenefitCard';
-
-// Memoized FAQ Item Component
-const FAQItem = memo(({
-  faq,
-  index,
-  isOpen,
-  onToggle
-}: {
-  faq: typeof FAQ_ITEMS[number];
-  index: number;
-  isOpen: boolean;
-  onToggle: () => void;
-}) => (
-  <div className={`group relative bg-white/90 backdrop-blur-sm rounded-2xl border transition-all duration-300 overflow-hidden ${isOpen
-    ? 'border-blue-200 shadow-lg shadow-blue-100/50'
-    : 'border-slate-200 shadow-sm hover:border-blue-100 hover:shadow-md'
-    }`} itemScope itemType="https://schema.org/Question">
-    {/* Gradient accent line - only visible when open */}
-    <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-600 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'
-      }`}></div>
-
-    <button
-      onClick={onToggle}
-      className="w-full px-6 lg:px-8 py-6 text-left flex items-start justify-between gap-4 group"
-    >
-      <div className="flex items-start gap-4 flex-1">
-        {/* Question number badge */}
-        <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold transition-all duration-300 ${isOpen
-          ? 'bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-md'
-          : 'bg-slate-100 text-slate-500 group-hover:bg-blue-50 group-hover:text-blue-600'
-          }`}>
-          {index + 1}
-        </div>
-
-        <h3 className={`text-base lg:text-lg font-bold transition-colors duration-300 ${isOpen
-          ? 'text-blue-600'
-          : 'text-slate-900 group-hover:text-blue-600'
-          }`} itemProp="name">
-          {faq.question}
-        </h3>
-      </div>
-
-      {/* Arrow icon */}
-      <div className="flex-shrink-0 mt-1">
-        <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${isOpen
-          ? 'bg-blue-50 rotate-180'
-          : 'bg-slate-50 group-hover:bg-blue-50'
-          }`}>
-          <svg
-            className={`w-5 h-5 transition-colors duration-300 ${isOpen ? 'text-blue-600' : 'text-slate-400 group-hover:text-blue-600'
-              }`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2.5}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </div>
-      </div>
-    </button>
-
-    {/* Answer section */}
-    <div
-      className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        }`}
-    >
-      <div className="px-6 lg:px-8 pb-6">
-        <div className="pl-12 pr-4">
-          <div className="pt-2 border-t border-slate-100" itemScope itemType="https://schema.org/Answer">
-            <p className="text-slate-600 leading-relaxed pt-4 text-[15px] lg:text-base" itemProp="text">
-              {faq.answer}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-));
-
-FAQItem.displayName = 'FAQItem';
 
 // Benefit Modal Component
 const BenefitModal = memo(({
@@ -368,11 +383,6 @@ const BenefitModal = memo(({
 
         {/* Content */}
         <div className="flex flex-col items-center text-center">
-          <div className={`w-16 h-16 ${bgClass} rounded-2xl flex items-center justify-center mb-6`}>
-            <svg className={`w-8 h-8 ${textClass}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={benefit.icon} />
-            </svg>
-          </div>
           <h2 className="text-3xl font-bold text-slate-900 mb-4">{benefit.title}</h2>
           <p className="text-lg text-slate-600 leading-relaxed">{benefit.detailedContent}</p>
         </div>
@@ -437,11 +447,6 @@ const WhyChooseModal = memo(({
 
         {/* Content */}
         <div className="flex flex-col items-center text-center">
-          <div className={`w-16 h-16 bg-gradient-to-br ${benefit.gradientFrom} ${benefit.gradientTo} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
-            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={benefit.icon} />
-            </svg>
-          </div>
           <h2 className="text-3xl font-bold text-slate-900 mb-4">{benefit.title}</h2>
           <p className="text-lg text-slate-600 leading-relaxed">{benefit.detailedContent}</p>
         </div>
@@ -624,8 +629,8 @@ const HowItWorksModal = memo(({
 HowItWorksModal.displayName = 'HowItWorksModal';
 
 export default function Home() {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [openBenefitIndex, setOpenBenefitIndex] = useState<number | null>(null);
+  const [openCosaIndex, setOpenCosaIndex] = useState<number | null>(null);
   const [openWhyChooseIndex, setOpenWhyChooseIndex] = useState<number | null>(null);
   const [openReviewsModal, setOpenReviewsModal] = useState(false);
   const [openHowItWorksIndex, setOpenHowItWorksIndex] = useState<number | null>(null);
@@ -643,10 +648,9 @@ export default function Home() {
     }
   }, []);
 
-  // Memoize FAQ toggle handlers
-  const handleFaqToggle = useCallback((index: number) => {
-    setOpenFaqIndex(prev => prev === index ? null : index);
-  }, []);
+  // Memoize Cosa Cambia modal handlers
+  const handleCosaClick = useCallback((index: number) => { setOpenCosaIndex(index); }, []);
+  const handleCloseCosaModal = useCallback(() => { setOpenCosaIndex(null); }, []);
 
   // Memoize benefit modal handlers
   const handleBenefitClick = useCallback((index: number) => {
@@ -702,6 +706,7 @@ export default function Home() {
   }, [openImpresaEdileDialog]);
 
   const selectedBenefit = openBenefitIndex !== null ? BENEFITS_DATA[openBenefitIndex] : null;
+  const selectedCosaItem = openCosaIndex !== null ? COSA_CAMBIA_ITEMS[openCosaIndex] : null;
   const selectedWhyChooseBenefit = openWhyChooseIndex !== null ? WHY_CHOOSE_BENEFITS_DATA[openWhyChooseIndex] : null;
   const selectedStep = openHowItWorksIndex !== null ? HOW_IT_WORKS_STEPS[openHowItWorksIndex] : null;
 
@@ -727,37 +732,6 @@ export default function Home() {
               />
             </div>
 
-            <div className="flex items-center gap-4">
-              {/* OAM Badge */}
-              <a
-                href="https://www.organismo-am.it/b/0/06197620963/F311BEF5-24B7-4A32-AB79-567598386DBC/g.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden md:flex flex-col gap-1 bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 group"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="flex flex-col items-end">
-                    <span className="text-xs text-slate-500 leading-tight">Iscritti al registro</span>
-                    <span className="text-sm font-bold text-slate-900 leading-tight">OAM M30</span>
-                  </div>
-                  <Image
-                    src="https://www.organismo-am.it/b/0/c3f18c274847902265f07537ce366a8eJO5NMdSW1LRcd_pl_8_eq_/1.png"
-                    alt="Retivita iscritto al registro OAM M30 - Organismo Agenti e Mediatori - Verifica autorizzazione"
-                    width={44}
-                    height={44}
-                    quality={60}
-                    loading="lazy"
-                    className="w-11 h-11 object-contain"
-                  />
-                </div>
-                <div className="flex items-center justify-center gap-1.5 text-xs text-[#090075] font-medium">
-                  <span>Verifica in tempo reale</span>
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </div>
-              </a>
-            </div>
           </div>
         </div>
       </header>
@@ -771,24 +745,41 @@ export default function Home() {
             <article className="space-y-8">
 
               {/* Main Headline */}
-              <header className="space-y-4">
-                <h1 className="text-5xl lg:text-7xl font-semibold lg:font-bold leading-[1.05] tracking-tight" itemProp="name">
+              <header className="space-y-5">
+                <h1 className="text-4xl lg:text-6xl font-bold leading-[1.1] tracking-tight" itemProp="name">
                   <span className="block bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent">
-                    La rete che fa{' '}
-                    <span className="relative inline-block">
-                      <span className="font-extrabold text-[#090075]">
-                        crescere
-                      </span>
-                    </span>
-                  </span>
-                  <span className="block bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">
-                    il tuo business assicurativo.
+                    La rete per assicuratori esperti che vogliono{' '}
+                    <span className="font-extrabold text-[#090075]">
+                      guadagnare di più
+                    </span>{' '}
+                    senza cambiare mestiere.
                   </span>
                 </h1>
-                <p className="text-xl lg:text-2xl text-slate-600 font-light max-w-xl leading-relaxed" itemProp="description">
-                  Prodotti esclusivi, alte provvigioni e supporto professionale. Unisciti a Retivita e porta la tua carriera assicurativa al livello successivo.
+                <p className="text-xl lg:text-2xl text-slate-700 font-medium max-w-xl leading-relaxed" itemProp="description">
+                  Se sei un assicuratore con portafoglio clienti, qui puoi trasformarlo in reddito reale.
+                </p>
+                <p className="text-base lg:text-lg text-slate-500 max-w-xl leading-relaxed border-l-4 border-[#090075] pl-4">
+                  Non cerchiamo venditori. Cerchiamo assicuratori che vogliono diventare imprenditori.
                 </p>
               </header>
+
+              {/* Target Audience */}
+              <div className="space-y-3">
+                <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Questa opportunità è pensata per:</p>
+                <div className="flex flex-col gap-2">
+                  {[
+                    "Consulenti assicurativi con esperienza",
+                    "Intermediari con portafoglio clienti",
+                    "Agenti che vogliono più libertà commerciale",
+                    "Professionisti stanchi di lavorare solo per la compagnia",
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-2">
+                      <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 hover:bg-emerald-100 shrink-0">✔</Badge>
+                      <span className="text-slate-700 text-sm lg:text-base">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </article>
 
             {/* Right: Form Card + Social Proof */}
@@ -841,31 +832,30 @@ export default function Home() {
             </p>
           </header>
 
-          {/* 3 Benefit Cards originales de Hero movidas aquí */}
+          {/* Section Image */}
+          <div className="flex justify-center -mb-6">
+            <Image
+              src="/man_on_call.png"
+              alt="Consulente assicurativo Retivita"
+              width={640}
+              height={640}
+              quality={100}
+              loading="lazy"
+              className="object-contain"
+              style={{ width: '420px', height: 'auto' }}
+            />
+          </div>
+
+          {/* 3 Benefit Cards */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {BENEFITS_DATA.map((benefit, idx) => (
               <button
                 key={idx}
                 onClick={() => handleBenefitClick(idx)}
-                className="flex flex-col items-start gap-3 p-6 bg-white rounded-2xl border border-slate-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg cursor-pointer text-left w-full"
+                className="flex flex-col items-start gap-2 p-6 bg-white rounded-2xl border border-slate-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg cursor-pointer text-left w-full"
               >
-                <div className={`flex-shrink-0 w-12 h-12 ${benefit.color === 'blue' ? 'bg-blue-100' :
-                  benefit.color === 'green' ? 'bg-green-100' :
-                    benefit.color === 'indigo' ? 'bg-indigo-100' :
-                      'bg-amber-100'
-                  } rounded-xl flex items-center justify-center`}>
-                  <svg className={`w-6 h-6 ${benefit.color === 'blue' ? 'text-blue-600' :
-                    benefit.color === 'green' ? 'text-green-600' :
-                      benefit.color === 'indigo' ? 'text-indigo-600' :
-                        'text-amber-600'
-                    }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={benefit.icon} />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">{benefit.title}</h3>
-                  <p className="text-sm text-slate-600">{benefit.description}</p>
-                </div>
+                <h3 className="text-xl font-bold text-slate-900">{benefit.title}</h3>
+                <p className="text-sm text-slate-600">{benefit.description}</p>
               </button>
             ))}
           </div>
@@ -882,11 +872,6 @@ export default function Home() {
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${benefit.bgColor} rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300`}></div>
                 <div className="relative">
-                  <div className={`w-14 h-14 bg-gradient-to-br ${benefit.gradientFrom} ${benefit.gradientTo} rounded-2xl flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={benefit.icon} />
-                    </svg>
-                  </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{benefit.title}</h3>
                   <p className="text-slate-600 leading-relaxed">
                     {benefit.description}
@@ -898,8 +883,142 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Cosa Cambia Section */}
+      <section className="relative z-10 px-6 lg:px-12 py-16 lg:py-24" aria-labelledby="cosa-cambia-heading">
+        <div className="max-w-7xl mx-auto">
+          <header className="text-center mb-12 lg:mb-16">
+            <h2 id="cosa-cambia-heading" className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+              Cosa cambia entrando nella rete
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Non è solo un accordo commerciale. È un cambio di modello professionale.
+            </p>
+          </header>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {COSA_CAMBIA_ITEMS.map((item, idx) => (
+              <button
+                key={idx}
+                onClick={() => handleCosaClick(idx)}
+                className={`relative border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 bg-white group overflow-hidden rounded-xl text-left w-full cursor-pointer ${
+                  item.color === 'blue' ? 'hover:border-blue-200' :
+                  item.color === 'green' ? 'hover:border-emerald-200' :
+                  item.color === 'indigo' ? 'hover:border-indigo-200' :
+                  item.color === 'amber' ? 'hover:border-amber-200' :
+                  'hover:border-purple-200'
+                }`}
+              >
+                <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 ${
+                  item.color === 'blue' ? 'bg-blue-500/5' :
+                  item.color === 'green' ? 'bg-emerald-500/5' :
+                  item.color === 'indigo' ? 'bg-indigo-500/5' :
+                  item.color === 'amber' ? 'bg-amber-500/5' :
+                  'bg-purple-500/5'
+                }`}></div>
+                <div className="p-6 lg:p-8 relative">
+                  <h3 className="font-bold text-slate-900 text-lg leading-tight mb-2">{item.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Perché stanno cambiando modello Section */}
+      <section className="relative z-10 px-6 lg:px-12 py-16 lg:py-24" aria-labelledby="perche-cambiano-heading">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="space-y-6">
+              <div>
+                <Badge className="bg-amber-100 text-amber-700 border-amber-200 hover:bg-amber-100 mb-4">Il mercato sta cambiando</Badge>
+                <h2 id="perche-cambiano-heading" className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                  Perché molti assicuratori stanno cambiando modello
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  Negli ultimi anni molti consulenti assicurativi stanno lasciando il modello tradizionale. Le ragioni sono sempre le stesse:
+                </p>
+              </div>
+              <div className="space-y-3">
+                {PERCHE_CAMBIANO_ITEMS.map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-3 p-4 bg-red-50 border border-red-100 rounded-xl">
+                    <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                      <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </div>
+                    <span className="text-slate-700 font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-[#090075] to-indigo-700 rounded-3xl p-8 lg:p-10 text-white shadow-2xl relative overflow-hidden">
+              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4wOCIvPjwvZz48L3N2Zz4=')] opacity-40"></div>
+              <div className="relative space-y-6">
+                <div>
+                  <p className="text-blue-200 text-sm font-semibold uppercase tracking-wider mb-2">La risposta</p>
+                  <h3 className="text-2xl lg:text-3xl font-bold mb-4">Per questo nasce Retivita.it</h3>
+                  <p className="text-blue-100 leading-relaxed">
+                    Un modello pensato per restituire agli assicuratori quello che il sistema tradizionale ha tolto: autonomia, guadagni reali e un patrimonio professionale che dura.
+                  </p>
+                </div>
+                <Separator className="bg-white/20" />
+                <div>
+                  <div className="text-2xl font-bold">Pluriennale</div>
+                  <div className="text-blue-200 text-sm">Esperienza nel settore</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Chi c'è dietro Section */}
+      <section className="relative z-10 px-6 lg:px-12 py-16 lg:py-24" aria-labelledby="chi-dietro-heading">
+        <div className="max-w-6xl mx-auto">
+          <header className="text-center mb-12">
+            <h2 id="chi-dietro-heading" className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+              Chi ha creato questo progetto
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              Retivita nasce dall&apos;esperienza diretta nel settore assicurativo. Non siamo una startup: siamo professionisti che hanno vissuto in prima persona i limiti del modello tradizionale e hanno deciso di costruire qualcosa di diverso.
+            </p>
+          </header>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { value: "10+", label: "Anni di esperienza nel settore assicurativo", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z", color: "blue" },
+              { value: "In crescita", label: "Rete in continua espansione sul territorio", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z", color: "indigo" },
+              { value: "4.9", label: "Valutazione media dai consulenti della rete", icon: "M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z", color: "amber" },
+              { value: "Nazionale", label: "Presenza capillare su tutto il territorio italiano", icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z", color: "green" },
+            ].map((stat, idx) => (
+              <Card key={idx} className="border-slate-200 bg-white hover:shadow-lg transition-all duration-300 text-center py-0">
+                <CardContent className="p-6">
+                  <div className={`w-12 h-12 mx-auto mb-4 rounded-2xl flex items-center justify-center ${
+                    stat.color === 'blue' ? 'bg-blue-100' :
+                    stat.color === 'indigo' ? 'bg-indigo-100' :
+                    stat.color === 'amber' ? 'bg-amber-100' :
+                    'bg-emerald-100'
+                  }`}>
+                    <svg className={`w-6 h-6 ${
+                      stat.color === 'blue' ? 'text-blue-600' :
+                      stat.color === 'indigo' ? 'text-indigo-600' :
+                      stat.color === 'amber' ? 'text-amber-600' :
+                      'text-emerald-600'
+                    }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={stat.icon} />
+                    </svg>
+                  </div>
+                  <div className="text-3xl font-bold text-slate-900 mb-2">{stat.value}</div>
+                  <p className="text-sm text-slate-600 leading-snug">{stat.label}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How It Works Section */}
-      <section className="relative z-10 px-6 lg:px-12 py-20 bg-white/50" aria-labelledby="how-it-works-heading" itemScope itemType="https://schema.org/HowTo">
+      <section className="relative z-10 px-6 lg:px-12 py-20" aria-labelledby="how-it-works-heading" itemScope itemType="https://schema.org/HowTo">
         <div className="max-w-7xl mx-auto">
           <header className="text-center mb-8">
             <h2 id="how-it-works-heading" className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4" itemProp="name">
@@ -937,7 +1056,7 @@ export default function Home() {
                 itemProp="step"
               >
                 <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-blue-200 cursor-pointer">
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#090075] to-indigo-700 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <span className="text-2xl font-bold text-white" itemProp="position">{step.step}</span>
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-3" itemProp="name">{step.title}</h3>
@@ -979,27 +1098,27 @@ export default function Home() {
 
             {/* Right: CTA Content */}
             <div className="lg:order-2">
-              <div className="bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-500 rounded-3xl p-10 lg:p-12 shadow-2xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIi8+PC9nPjwvc3ZnPg==')] opacity-20"></div>
+              <div className="bg-gradient-to-br from-[#090075] to-indigo-700 rounded-3xl p-10 lg:p-12 shadow-2xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4wOCIvPjwvZz48L3N2Zz4=')] opacity-40"></div>
                 <div className="relative">
                   <div className="inline-flex items-center gap-2 text-sm font-medium text-white bg-white/20 px-4 py-2 rounded-full mb-6">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
                       <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
                     </svg>
-                    <span>Pronto a crescere?</span>
+                    <span>Solo per professionisti esperti</span>
                   </div>
                   <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4">
-                    Non lasciare che altri occupino il tuo mercato.
+                    Scopri se puoi entrare nella rete.
                   </h2>
                   <p className="text-lg lg:text-xl text-blue-100 mb-8 leading-relaxed">
-                    Unisciti ai consulenti che hanno già scelto Retivita per far crescere il loro business assicurativo. Candidati oggi, gratuitamente.
+                    Prenota un confronto riservato di 15 minuti con un nostro responsabile. Nessun impegno, nessuna pressione.
                   </p>
                   <Button
                     onClick={scrollToForm}
-                    className="bg-white text-blue-600 hover:bg-blue-50 h-14 px-8 text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                    className="bg-white text-[#090075] hover:bg-blue-50 h-14 px-8 text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
                   >
-                    Parla con un responsabile ora
+                    Richiedi la presentazione riservata
                     <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
@@ -1008,8 +1127,8 @@ export default function Home() {
                   {/* Stats */}
                   <div className="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-white/20">
                     <div>
-                      <div className="text-3xl font-bold text-white">+500</div>
-                      <div className="text-sm text-blue-100">Consulenti attivi nella rete</div>
+                      <div className="text-3xl font-bold text-white">In crescita</div>
+                      <div className="text-sm text-blue-100">Rete in continua espansione</div>
                     </div>
                     <div>
                       <div className="text-3xl font-bold text-white">24h</div>
@@ -1137,19 +1256,19 @@ export default function Home() {
       <section className="relative z-10 px-6 lg:px-12 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-0 items-stretch">
-            <div className="relative flex flex-col items-start gap-3 lg:gap-4 bg-[#151E3B] rounded-t-2xl rounded-b-none lg:rounded-2xl lg:rounded-r-none shadow-lg p-10 sm:p-8 lg:p-10 w-full">
+            <div className="relative flex flex-col items-start gap-3 lg:gap-4 bg-gradient-to-br from-[#090075] to-indigo-700 rounded-t-2xl rounded-b-none lg:rounded-2xl lg:rounded-r-none shadow-lg p-10 sm:p-8 lg:p-10 w-full overflow-hidden">
               <header className="text-left mb-12">
-                <h2 className="text-2xl lg:text-5xl font-bold mb-4" style={{ color: '#CEE5FD' }}>
+                <h2 className="text-2xl lg:text-5xl font-bold mb-4 text-white">
                   Sei un'Agenzia o un Broker? Amplia la tua rete di distribuzione
                 </h2>
-                <p className="text-lg max-w-2xl mx-auto mt-8" style={{ color: '#CEE5FD' }}>
+                <p className="text-lg max-w-2xl mx-auto mt-8 text-white">
                   Offri ai tuoi sub-agenti l'accesso ai migliori prodotti assicurativi del mercato. Diventa partner di Retivita e aumenta la tua produzione senza limiti.
                 </p>
               </header>
               <div className="lg:absolute lg:bottom-12 lg:left-10">
                 <Dialog open={openImpresaEdileDialog} onOpenChange={setOpenImpresaEdileDialog} modal={true}>
                   <DialogTrigger asChild>
-                    <Button className="bg-white text-[#151E3B] hover:bg-blue-50 h-12 px-8 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer">
+                    <Button className="bg-white text-[#090075] hover:bg-blue-50 h-12 px-8 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer">
                       Diventa Partner Retivita
                       <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -1245,7 +1364,7 @@ export default function Home() {
             </div>
             <div className="relative h-[500px] max-w-[600px] rounded-t-none rounded-b-2xl lg:rounded-l-none lg:rounded-r-2xl overflow-hidden">
               <img
-                src="/impresa_edile.png"
+                src="/piazza_gae_aulenti.png"
                 alt="Agenzia Assicurativa - Partnership Retivita"
                 className="w-full h-full object-cover"
               />
@@ -1254,42 +1373,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="relative z-10 px-6 lg:px-12 py-24 overflow-hidden" aria-labelledby="faq-heading" itemScope itemType="https://schema.org/FAQPage">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/30"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLW9wYWNpdHk9Ii4wNSIvPjwvZz48L3N2Zz4=')] opacity-40"></div>
-
-        <div className="relative max-w-5xl mx-auto">
-          {/* Header */}
-          <header className="text-center mb-16">
-            <h2 id="faq-heading" className="text-4xl lg:text-6xl font-bold text-slate-900 mb-4 tracking-tight">
-              Domande Frequenti
+      {/* FAQ Section - Domande che ogni assicuratore fa */}
+      <section className="relative z-10 px-6 lg:px-12 py-16 lg:py-24" aria-labelledby="quick-faq-heading" itemScope itemType="https://schema.org/FAQPage">
+        <div className="max-w-4xl mx-auto">
+          <header className="text-center mb-10">
+            <h2 id="quick-faq-heading" className="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+              Domande che ogni assicuratore fa
             </h2>
-            <p className="text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Tutto quello che devi sapere per entrare nella rete Retivita.
-            </p>
+            <p className="text-slate-600 text-lg">Risposte dirette. Nessun filtro.</p>
           </header>
-
-          {/* FAQ Grid */}
-          <div className="grid gap-4 lg:gap-5">
-            {FAQ_ITEMS.map((faq, index) => (
-              <FAQItem
-                key={index}
-                faq={faq}
-                index={index}
-                isOpen={openFaqIndex === index}
-                onToggle={() => handleFaqToggle(index)}
-              />
+          <Accordion type="single" collapsible className="space-y-3 mb-16">
+            {QUICK_FAQ_ITEMS.map((item, idx) => (
+              <AccordionItem
+                key={idx}
+                value={`quick-faq-${idx}`}
+                className="bg-white border border-slate-200 rounded-2xl px-6 overflow-hidden data-[state=open]:border-[#090075]/30 data-[state=open]:shadow-md transition-all duration-300"
+                itemScope
+                itemType="https://schema.org/Question"
+              >
+                <AccordionTrigger className="text-left font-semibold text-slate-900 hover:no-underline text-base lg:text-lg py-5 hover:text-[#090075] transition-colors" itemProp="name">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-slate-600 text-base leading-relaxed pb-5" itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+                  <span itemProp="text">{item.answer}</span>
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
 
           {/* Bottom CTA */}
-          <div className="mt-16 text-center px-4 sm:px-0">
-            <div className="flex flex-col items-center gap-3 lg:gap-4 bg-white/80 backdrop-blur-sm rounded-2xl border border-slate-200 shadow-lg p-10 sm:p-8 lg:p-10 w-full max-w-lg mx-auto">
-              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg">
+          <div className="text-center">
+            <div className="flex flex-col items-center gap-3 lg:gap-4 bg-white rounded-2xl border border-slate-200 shadow-lg p-10 sm:p-8 lg:p-10 w-full max-w-lg mx-auto">
+              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-[#090075] to-indigo-700 rounded-full flex items-center justify-center shadow-lg">
                 <svg className="w-5 h-5 lg:w-6 lg:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
               </div>
               <div>
@@ -1301,9 +1418,9 @@ export default function Home() {
                 </p>
                 <Button
                   onClick={scrollToForm}
-                  className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 h-10 sm:h-12 px-6 sm:px-8 text-sm sm:text-base font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="bg-gradient-to-r from-[#090075] to-indigo-700 hover:from-[#07005c] hover:to-indigo-800 h-10 sm:h-12 px-6 sm:px-8 text-sm sm:text-base font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
-                  Candidati gratuitamente
+                  Scopri se puoi entrare nella rete
                   <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -1314,13 +1431,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Closing Phrase */}
+      <section className="relative z-10 px-6 lg:px-12 py-16">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-gradient-to-br from-[#090075] to-indigo-700 rounded-3xl p-10 lg:p-12 shadow-2xl relative overflow-hidden">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4wOCIvPjwvZz48L3N2Zz4=')] opacity-40"></div>
+            <div className="relative text-center space-y-4">
+              <p className="text-2xl lg:text-3xl font-bold text-white">
+                Non è una proposta per tutti.
+              </p>
+              <p className="text-lg text-blue-100 leading-relaxed">
+                Valutiamo solo professionisti con esperienza nel settore assicurativo.
+              </p>
+              <div className="pt-2">
+                <Button
+                  onClick={scrollToForm}
+                  className="bg-white text-[#090075] hover:bg-blue-50 h-12 px-8 text-base font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                >
+                  Verifica se sei idoneo
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="relative z-10 px-6 lg:px-12 py-8 border-t border-slate-200 bg-white/50 backdrop-blur-sm" role="contentinfo" itemScope itemType="https://schema.org/WPFooter">
+      <footer className="relative z-10 px-6 lg:px-12 py-8 border-t border-slate-200" role="contentinfo" itemScope itemType="https://schema.org/WPFooter">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex flex-col items-center md:items-start gap-6">
               <Image
-                src="https://creditplan.it/wp-content/uploads/2023/02/LOGO-CREDITPLAN.png"
+                src="/logo.svg"
                 alt="Retivita - Rete Italiana di Consulenti Assicurativi"
                 width={280}
                 height={96}
@@ -1328,7 +1473,7 @@ export default function Home() {
                 loading="lazy"
                 draggable={false}
                 onContextMenu={(e) => e.preventDefault()}
-                className="w-auto h-8 select-none"
+                className="w-auto h-16 select-none"
                 style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none' }}
               />
               <p className="text-sm text-slate-600 text-center md:text-left" itemProp="copyrightHolder">
@@ -1363,6 +1508,13 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Cosa Cambia Modal */}
+      <CosaModal
+        isOpen={openCosaIndex !== null}
+        onClose={handleCloseCosaModal}
+        item={selectedCosaItem}
+      />
 
       {/* Benefit Modal */}
       <BenefitModal
