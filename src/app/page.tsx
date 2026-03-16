@@ -985,6 +985,9 @@ export default function Home() {
                 <h2 id="perche-cambiano-heading" className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
                   Perché molti assicuratori stanno cambiando modello
                 </h2>
+                <p className="text-base lg:text-lg font-semibold text-[#090075] mb-3">
+                  &quot;Da rete piramidale a rete orizzontale&quot;
+                </p>
                 <p className="text-lg text-slate-600 leading-relaxed">
                   Negli ultimi anni molti consulenti assicurativi stanno lasciando il modello tradizionale. Le ragioni sono sempre le stesse:
                 </p>
