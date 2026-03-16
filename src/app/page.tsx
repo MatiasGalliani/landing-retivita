@@ -925,6 +925,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className="relative z-10 px-6 lg:px-12 py-20" aria-labelledby="how-it-works-heading" itemScope itemType="https://schema.org/HowTo">
+        <div className="max-w-7xl mx-auto">
+          <header className="text-center mb-8">
+            <h2 id="how-it-works-heading" className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4" itemProp="name">
+              Come entrare nella rete
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto" itemProp="description">
+              Un percorso semplice, veloce e completamente gratuito.
+            </p>
+          </header>
+
+              {/* Trust Image */}
+          <div className="max-w-xl mx-auto">
+            <Image
+              src="/img3.png"
+              alt="Come entrare nella rete Retivita - Processo in 3 semplici passaggi per consulenti assicurativi"
+              width={1200}
+              height={801}
+              unoptimized
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+              className="w-full h-auto object-cover rounded-xl"
+            />
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+            {HOW_IT_WORKS_STEPS.map((step, idx) => (
+              <button
+                key={idx}
+                onClick={() => handleHowItWorksClick(idx)}
+                className="relative group text-left w-full"
+                itemScope
+                itemType="https://schema.org/HowToStep"
+                itemProp="step"
+              >
+                <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-blue-200 cursor-pointer">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#090075] to-indigo-700 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-2xl font-bold text-white" itemProp="position">{step.step}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3" itemProp="name">{step.title}</h3>
+                  <p className="text-slate-600 leading-relaxed" itemProp="text">
+                    {step.description}
+                  </p>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Perché stanno cambiando modello Section */}
       <section className="relative z-10 px-6 lg:px-12 py-16 lg:py-24" aria-labelledby="perche-cambiano-heading">
         <div className="max-w-6xl mx-auto">
@@ -1012,56 +1062,6 @@ export default function Home() {
                   <p className="text-sm text-slate-600 leading-snug">{stat.label}</p>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="relative z-10 px-6 lg:px-12 py-20" aria-labelledby="how-it-works-heading" itemScope itemType="https://schema.org/HowTo">
-        <div className="max-w-7xl mx-auto">
-          <header className="text-center mb-8">
-            <h2 id="how-it-works-heading" className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4" itemProp="name">
-              Come entrare nella rete
-            </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto" itemProp="description">
-              Un percorso semplice, veloce e completamente gratuito.
-            </p>
-          </header>
-
-              {/* Trust Image */}
-          <div className="max-w-xl mx-auto">
-            <Image
-              src="/img3.png"
-              alt="Come entrare nella rete Retivita - Processo in 3 semplici passaggi per consulenti assicurativi"
-              width={1200}
-              height={801}
-              unoptimized
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-              className="w-full h-auto object-cover rounded-xl"
-            />
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-            {HOW_IT_WORKS_STEPS.map((step, idx) => (
-              <button
-                key={idx}
-                onClick={() => handleHowItWorksClick(idx)}
-                className="relative group text-left w-full"
-                itemScope
-                itemType="https://schema.org/HowToStep"
-                itemProp="step"
-              >
-                <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-blue-200 cursor-pointer">
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#090075] to-indigo-700 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-2xl font-bold text-white" itemProp="position">{step.step}</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3" itemProp="name">{step.title}</h3>
-                  <p className="text-slate-600 leading-relaxed" itemProp="text">
-                    {step.description}
-                  </p>
-                </div>
-              </button>
             ))}
           </div>
         </div>
