@@ -1036,9 +1036,7 @@ export default function Home() {
               alt="Come entrare nella rete Retivita - Processo in 3 semplici passaggi per consulenti assicurativi"
               width={1200}
               height={801}
-              quality={100}
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+              unoptimized
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
               className="w-full h-auto object-cover rounded-xl"
             />
