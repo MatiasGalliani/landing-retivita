@@ -1459,6 +1459,116 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Condominio Ristrutturazione Section */}
+      <section className="relative z-10 px-6 lg:px-12 py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative bg-gradient-to-br from-emerald-600 to-teal-700 rounded-3xl p-10 lg:p-12 shadow-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4wOCIvPjwvZz48L3N2Zz4=')] opacity-30"></div>
+            <div className="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+              <div className="flex-shrink-0 w-20 h-20 lg:w-24 lg:h-24 bg-white/20 rounded-3xl flex items-center justify-center shadow-lg">
+                <svg className="w-10 h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <div className="flex-1 text-center lg:text-left">
+                <Badge className="bg-white/20 text-white border-white/30 hover:bg-white/20 mb-3 text-sm">
+                  Per amministratori e condomìni
+                </Badge>
+                <h2 className="text-2xl lg:text-3xl font-bold text-white mb-3">
+                  Sei un condominio e devi ristrutturare?
+                </h2>
+                <p className="text-emerald-100 text-lg leading-relaxed">
+                  Chiedici una consulenza preliminare gratuita. Ti aiutiamo a trovare la soluzione di finanziamento più adatta, con erogazione rapida e senza burocrazia inutile.
+                </p>
+              </div>
+              <div className="flex-shrink-0">
+                <Button
+                  onClick={scrollToForm}
+                  className="bg-white text-emerald-700 hover:bg-emerald-50 h-14 px-8 text-base font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 whitespace-nowrap"
+                >
+                  Consulenza gratuita
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* OAM Credit Consultant CTA Section */}
+      <section className="relative z-10 px-6 lg:px-12 py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-3xl border-2 border-[#090075]/20 shadow-2xl p-10 lg:p-12 relative overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#090075] to-indigo-500 rounded-t-3xl"></div>
+
+            <div className="text-center mb-8">
+              <Badge className="bg-indigo-100 text-indigo-700 border-indigo-200 hover:bg-indigo-100 mb-4 text-sm px-4 py-1">
+                Opportunità per mediatori creditizi
+              </Badge>
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                Vuoi diventare consulente creditizio OAM<br className="hidden lg:block" /> esperto in condòmini?
+              </h2>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                Con noi puoi costruire una specializzazione ad alto valore nel credito condominiale, con strumenti, convenzioni e supporto completo.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-4 mb-10">
+              {[
+                {
+                  icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+                  text: "Ottenere l'iscrizione OAM con il nostro supporto"
+                },
+                {
+                  icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+                  text: "Specializzarti nel credito condominiale"
+                },
+                {
+                  icon: "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z",
+                  text: "Accedere a convenzioni bancarie dedicate con erogazione rapida"
+                },
+                {
+                  icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
+                  text: "Costruire un portafoglio clienti condominiali stabile"
+                },
+                {
+                  icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+                  text: "Guadagnare provvigioni competitive su ogni pratica"
+                },
+                {
+                  icon: "M13 10V3L4 14h7v7l9-11h-7z",
+                  text: "Crescere con formazione e affiancamento specializzato"
+                },
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                  <div className="flex-shrink-0 w-9 h-9 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    <svg className="w-5 h-5 text-[#090075]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
+                    </svg>
+                  </div>
+                  <span className="text-slate-700 font-medium text-sm leading-snug pt-1">{item.text}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Button
+                onClick={scrollToForm}
+                className="bg-gradient-to-r from-[#090075] to-indigo-700 hover:from-[#07005c] hover:to-indigo-800 h-14 px-10 text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              >
+                Scopri come diventare consulente OAM con noi
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Button>
+              <p className="text-sm text-slate-500 mt-3">Candidatura gratuita · Risposta entro 24 ore</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="relative z-10 px-6 lg:px-12 py-8 border-t border-slate-200" role="contentinfo" itemScope itemType="https://schema.org/WPFooter">
         <div className="max-w-7xl mx-auto">
