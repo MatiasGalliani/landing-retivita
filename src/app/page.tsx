@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import dynamic from 'next/dynamic';
 import { StructuredData } from "@/components/StructuredData";
 import { getLenis } from './smoothscroll'
@@ -223,7 +223,6 @@ const QUICK_FAQ_ITEMS = [
   { question: "Posso mantenere il mio portafoglio?", answer: "Sì. Il portafoglio che porti con te e quello che costruisci nella rete restano completamente tuoi. Nessun vincolo di trasferimento." },
   { question: "Serve partita IVA?", answer: "Sì. Per collaborare con Retivita è necessario avere una partita IVA attiva e l'iscrizione al RUI (Registro Unico degli Intermediari)." },
   { question: "Quanto tempo serve per partire?", answer: "Pochi giorni. Una volta completata la valutazione del profilo, l'onboarding è rapido: accesso alla piattaforma, prodotti e supporto operativo in tempi brevissimi." },
-  { question: "Devo avere già un portafoglio clienti per entrare nella rete?", answer: "No, accettiamo sia consulenti con esperienza pluriennale che professionisti alle prime armi. Offriamo un percorso di formazione e affiancamento personalizzato per aiutarti a costruire e sviluppare il tuo portafoglio fin da subito." },
   { question: "È necessario essere iscritti al RUI per collaborare con Retivita?", answer: "Sì, è necessario essere iscritti al Registro Unico degli Intermediari (RUI) tenuto dall'IVASS. Se non sei ancora iscritto, il nostro team ti supporterà nell'intero processo di iscrizione, rendendo tutto più semplice e veloce." },
   { question: "Quanto posso guadagnare come consulente nella rete Retivita?", answer: "Il piano provvigionale è tra i più competitivi del mercato, con percentuali crescenti al crescere del volume di premi collocati. I consulenti più attivi raggiungono guadagni significativi grazie alle provvigioni ricorrenti sul portafoglio e ai bonus di produzione." },
   { question: "Quali prodotti assicurativi posso collocare?", answer: "Avrai accesso a un ampio catalogo di prodotti: vita, previdenza integrativa, protezione reddito, TCM, polizze danni e soluzioni dedicate alle aziende. Collaboriamo con le principali compagnie del mercato italiano per offrirti sempre le soluzioni più competitive." },
@@ -1039,7 +1038,7 @@ export default function Home() {
           </header>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { value: "10+", label: "Anni di esperienza nel settore assicurativo", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z", color: "blue" },
+              { value: "30+", label: "Anni di esperienza nel settore assicurativo", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z", color: "blue" },
               { value: "In crescita", label: "Rete in continua espansione sul territorio", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z", color: "indigo" },
               { value: "4.9", label: "Valutazione media dai consulenti della rete", icon: "M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z", color: "amber" },
               { value: "Nazionale", label: "Presenza capillare su tutto il territorio italiano", icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z", color: "green" },
@@ -1459,113 +1458,64 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Condominio Ristrutturazione Section */}
+      {/* Diventa Consulente Assicurativo + Creditizio OAM */}
       <section className="relative z-10 px-6 lg:px-12 py-16">
-        <div className="max-w-4xl mx-auto">
-          <div className="relative bg-gradient-to-br from-emerald-600 to-teal-700 rounded-3xl p-10 lg:p-12 shadow-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4wOCIvPjwvZz48L3N2Zz4=')] opacity-30"></div>
-            <div className="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-              <div className="flex-shrink-0 w-20 h-20 lg:w-24 lg:h-24 bg-white/20 rounded-3xl flex items-center justify-center shadow-lg">
-                <svg className="w-10 h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              </div>
-              <div className="flex-1 text-center lg:text-left">
-                <Badge className="bg-white/20 text-white border-white/30 hover:bg-white/20 mb-3 text-sm">
-                  Per amministratori e condomìni
-                </Badge>
-                <h2 className="text-2xl lg:text-3xl font-bold text-white mb-3">
-                  Sei un condominio e devi ristrutturare?
-                </h2>
-                <p className="text-emerald-100 text-lg leading-relaxed">
-                  Chiedici una consulenza preliminare gratuita. Ti aiutiamo a trovare la soluzione di finanziamento più adatta, con erogazione rapida e senza burocrazia inutile.
-                </p>
-              </div>
-              <div className="flex-shrink-0">
-                <Button
-                  onClick={scrollToForm}
-                  className="bg-white text-emerald-700 hover:bg-emerald-50 h-14 px-8 text-base font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 whitespace-nowrap"
-                >
-                  Consulenza gratuita
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* OAM Credit Consultant CTA Section */}
-      <section className="relative z-10 px-6 lg:px-12 py-16">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-3xl border-2 border-[#090075]/20 shadow-2xl p-10 lg:p-12 relative overflow-hidden">
-            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#090075] to-indigo-500 rounded-t-3xl"></div>
-
-            <div className="text-center mb-8">
-              <Badge className="bg-indigo-100 text-indigo-700 border-indigo-200 hover:bg-indigo-100 mb-4 text-sm px-4 py-1">
-                Opportunità per mediatori creditizi
-              </Badge>
-              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                Vuoi diventare consulente creditizio OAM<br className="hidden lg:block" /> esperto in condòmini?
-              </h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                Con noi puoi costruire una specializzazione ad alto valore nel credito condominiale, con strumenti, convenzioni e supporto completo.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-4 mb-10">
-              {[
-                {
-                  icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-                  text: "Ottenere l'iscrizione OAM con il nostro supporto"
-                },
-                {
-                  icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
-                  text: "Specializzarti nel credito condominiale"
-                },
-                {
-                  icon: "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z",
-                  text: "Accedere a convenzioni bancarie dedicate con erogazione rapida"
-                },
-                {
-                  icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
-                  text: "Costruire un portafoglio clienti condominiali stabile"
-                },
-                {
-                  icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-                  text: "Guadagnare provvigioni competitive su ogni pratica"
-                },
-                {
-                  icon: "M13 10V3L4 14h7v7l9-11h-7z",
-                  text: "Crescere con formazione e affiancamento specializzato"
-                },
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
-                  <div className="flex-shrink-0 w-9 h-9 bg-indigo-100 rounded-lg flex items-center justify-center">
-                    <svg className="w-5 h-5 text-[#090075]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
-                    </svg>
-                  </div>
-                  <span className="text-slate-700 font-medium text-sm leading-snug pt-1">{item.text}</span>
+        <div className="max-w-3xl mx-auto">
+          <Card className="border-0 shadow-2xl overflow-hidden bg-[#05004e] relative">
+              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4wOCIvPjwvZz48L3N2Zz4=')] opacity-40 pointer-events-none" />
+              <CardHeader className="relative text-center px-8 pt-10 pb-6">
+                <div className="flex justify-center gap-3 mb-5">
+                  <Badge className="bg-white/20 text-white border-white/30 hover:bg-white/20 text-sm font-semibold px-4 py-1.5">
+                    Assicurativo
+                  </Badge>
+                  <Badge className="bg-amber-400/90 text-amber-950 border-amber-300/50 hover:bg-amber-400/90 text-sm font-semibold px-4 py-1.5">
+                    Creditizio OAM
+                  </Badge>
                 </div>
-              ))}
-            </div>
-
-            <div className="text-center">
-              <Button
-                onClick={scrollToForm}
-                className="bg-gradient-to-r from-[#090075] to-indigo-700 hover:from-[#07005c] hover:to-indigo-800 h-14 px-10 text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-              >
-                Scopri come diventare consulente OAM con noi
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Button>
-              <p className="text-sm text-slate-500 mt-3">Candidatura gratuita · Risposta entro 24 ore</p>
-            </div>
-          </div>
+                <CardTitle className="text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-4">
+                  Diventa consulente assicurativo{" "}
+                  <span className="text-amber-300">+</span>{" "}
+                  creditizio OAM
+                </CardTitle>
+                <CardDescription className="text-blue-100 text-lg leading-relaxed max-w-xl mx-auto">
+                  Con Retivita puoi operare su entrambi i fronti: proteggere i tuoi clienti con le migliori polizze
+                  <span className="font-semibold text-white"> e</span> supportarli nelle soluzioni di credito con iscrizione OAM.
+                  Un profilo doppio, un reddito moltiplicato.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="relative px-8 pb-10">
+                <div className="grid sm:grid-cols-3 gap-4 mb-8">
+                  {[
+                    { icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", label: "Doppia abilitazione" },
+                    { icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z", label: "Reddito moltiplicato" },
+                    { icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z", label: "Supporto completo" },
+                  ].map((item, i) => (
+                    <Card key={i} className="bg-white/10 border-white/20 text-center">
+                      <CardContent className="p-4 flex flex-col items-center gap-2">
+                        <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
+                          </svg>
+                        </div>
+                        <span className="text-white font-semibold text-sm">{item.label}</span>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+                <div className="text-center">
+                  <Button
+                    onClick={scrollToForm}
+                    size="lg"
+                    className="bg-white text-[#090075] hover:bg-amber-50 font-extrabold text-base px-10 h-14 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                  >
+                    Con noi puoi — Candidati ora
+                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Button>
+                </div>
+              </CardContent>
+          </Card>
         </div>
       </section>
 
