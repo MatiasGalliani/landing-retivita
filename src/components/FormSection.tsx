@@ -45,7 +45,7 @@ export function FormSection() {
         submittedAt: new Date().toISOString(),
       };
 
-      const response = await fetch('/api/forms/quinto-pensionati-leads', {
+      const response = await fetch('https://accelera-crm-production.up.railway.app/api/leads/retivita', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
